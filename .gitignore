@@ -72,3 +72,17 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+# Assets
+**/UI/*
+**/Spells/*
+**/Sounds/*
+**/Pickups/*
+**/Materials/*
+**/Fonts/*
+**/Dungeon/*
+**/Effects/*
+**/Enemies/*
+**/MagicCircles/*
+**/Characters/*
+
