@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\yelsa\\onedrive\\documents\\unreal projects\\aurarepository\\aura\\source\\aura\\aura.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\yelsa\\onedrive\\documents\\unreal projects\\aurarepository\\aura\\intermediate\\build\\win64\\x64\\auraeditor\\development\\engine\\sharedpch.engine.cpp20.inclorderunreal5_0.h.pch",
+        "Includes": [
+            "c:\\users\\yelsa\\onedrive\\documents\\unreal projects\\aurarepository\\aura\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\aura\\definitions.aura.h",
+            "c:\\users\\yelsa\\onedrive\\documents\\unreal projects\\aurarepository\\aura\\source\\aura\\aura.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
