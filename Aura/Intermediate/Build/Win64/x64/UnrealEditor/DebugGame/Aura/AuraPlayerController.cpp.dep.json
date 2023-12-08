@@ -31,7 +31,9 @@
             "c:\\program files\\epic games\\ue_5.3\\engine\\plugins\\enhancedinput\\source\\enhancedinput\\public\\enhancedinputworldprocessor.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\slate\\public\\framework\\application\\iinputprocessor.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\plugins\\enhancedinput\\source\\enhancedinput\\public\\enhancedinputcomponent.h",
-            "c:\\program files\\epic games\\ue_5.3\\engine\\plugins\\enhancedinput\\intermediate\\build\\win64\\unrealeditor\\inc\\enhancedinput\\uht\\enhancedinputcomponent.generated.h"
+            "c:\\program files\\epic games\\ue_5.3\\engine\\plugins\\enhancedinput\\intermediate\\build\\win64\\unrealeditor\\inc\\enhancedinput\\uht\\enhancedinputcomponent.generated.h",
+            "c:\\users\\yelsa\\onedrive\\documents\\unreal projects\\aurarepository\\aura\\source\\aura\\public\\interaction\\enemyinterface.h",
+            "c:\\users\\yelsa\\onedrive\\documents\\unreal projects\\aurarepository\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\enemyinterface.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
