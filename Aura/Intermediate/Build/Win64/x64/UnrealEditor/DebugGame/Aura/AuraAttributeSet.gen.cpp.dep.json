@@ -1,0 +1,17 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\yelsa\\onedrive\\documents\\unreal projects\\aurarepository\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\auraattributeset.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\yelsa\\onedrive\\documents\\unreal projects\\aurarepository\\aura\\intermediate\\build\\win64\\x64\\auraeditor\\debuggame\\engine\\sharedpch.engine.nonoptimized.cpp20.inclorderunreal5_0.h.pch",
+        "Includes": [
+            "c:\\users\\yelsa\\onedrive\\documents\\unreal projects\\aurarepository\\aura\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\aura\\definitions.aura.h",
+            "c:\\users\\yelsa\\onedrive\\documents\\unreal projects\\aurarepository\\aura\\source\\aura\\public\\abilitysystem\\auraattributeset.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\plugins\\runtime\\gameplayabilities\\source\\gameplayabilities\\public\\attributeset.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\plugins\\runtime\\gameplayabilities\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplayabilities\\uht\\attributeset.generated.h",
+            "c:\\users\\yelsa\\onedrive\\documents\\unreal projects\\aurarepository\\aura\\intermediate\\build\\win64\\unrealeditor\\inc\\aura\\uht\\auraattributeset.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
