@@ -127,10 +127,10 @@ template<> AURA_API UScriptStruct* StaticStruct<FWidgetControllerParams>()
 	}
 	DEFINE_FUNCTION(UAuraWidgetController::execSetWidgetControllerParams)
 	{
-		P_GET_STRUCT_REF(FWidgetControllerParams,Z_Param_Out_WCParams);
+		P_GET_STRUCT_REF(FWidgetControllerParams,Z_Param_Out_WcParams);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->SetWidgetControllerParams(Z_Param_Out_WCParams);
+		P_THIS->SetWidgetControllerParams(Z_Param_Out_WcParams);
 		P_NATIVE_END;
 	}
 	void UAuraWidgetController::StaticRegisterNativesUAuraWidgetController()
@@ -145,12 +145,12 @@ template<> AURA_API UScriptStruct* StaticStruct<FWidgetControllerParams>()
 	{
 		struct AuraWidgetController_eventSetWidgetControllerParams_Parms
 		{
-			FWidgetControllerParams WCParams;
+			FWidgetControllerParams WcParams;
 		};
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_WCParams_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_WcParams_MetaData[];
 #endif
-		static const UECodeGen_Private::FStructPropertyParams NewProp_WCParams;
+		static const UECodeGen_Private::FStructPropertyParams NewProp_WcParams;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -158,13 +158,13 @@ template<> AURA_API UScriptStruct* StaticStruct<FWidgetControllerParams>()
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UAuraWidgetController_SetWidgetControllerParams_Statics::NewProp_WCParams_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UAuraWidgetController_SetWidgetControllerParams_Statics::NewProp_WcParams_MetaData[] = {
 		{ "NativeConst", "" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UAuraWidgetController_SetWidgetControllerParams_Statics::NewProp_WCParams = { "WCParams", nullptr, (EPropertyFlags)0x0010008008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AuraWidgetController_eventSetWidgetControllerParams_Parms, WCParams), Z_Construct_UScriptStruct_FWidgetControllerParams, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraWidgetController_SetWidgetControllerParams_Statics::NewProp_WCParams_MetaData), Z_Construct_UFunction_UAuraWidgetController_SetWidgetControllerParams_Statics::NewProp_WCParams_MetaData) }; // 1223616045
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UAuraWidgetController_SetWidgetControllerParams_Statics::NewProp_WcParams = { "WcParams", nullptr, (EPropertyFlags)0x0010008008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AuraWidgetController_eventSetWidgetControllerParams_Parms, WcParams), Z_Construct_UScriptStruct_FWidgetControllerParams, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UAuraWidgetController_SetWidgetControllerParams_Statics::NewProp_WcParams_MetaData), Z_Construct_UFunction_UAuraWidgetController_SetWidgetControllerParams_Statics::NewProp_WcParams_MetaData) }; // 1223616045
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UAuraWidgetController_SetWidgetControllerParams_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAuraWidgetController_SetWidgetControllerParams_Statics::NewProp_WCParams,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UAuraWidgetController_SetWidgetControllerParams_Statics::NewProp_WcParams,
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UAuraWidgetController_SetWidgetControllerParams_Statics::Function_MetaDataParams[] = {
@@ -221,7 +221,7 @@ template<> AURA_API UScriptStruct* StaticStruct<FWidgetControllerParams>()
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UAuraWidgetController_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_UAuraWidgetController_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UAuraWidgetController_SetWidgetControllerParams, "SetWidgetControllerParams" }, // 56165347
+		{ &Z_Construct_UFunction_UAuraWidgetController_SetWidgetControllerParams, "SetWidgetControllerParams" }, // 664055787
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UAuraWidgetController_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
@@ -309,9 +309,9 @@ template<> AURA_API UScriptStruct* StaticStruct<FWidgetControllerParams>()
 		{ FWidgetControllerParams::StaticStruct, Z_Construct_UScriptStruct_FWidgetControllerParams_Statics::NewStructOps, TEXT("WidgetControllerParams"), &Z_Registration_Info_UScriptStruct_WidgetControllerParams, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FWidgetControllerParams), 1223616045U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_UI_WidgetController_AuraWidgetController_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UAuraWidgetController, UAuraWidgetController::StaticClass, TEXT("UAuraWidgetController"), &Z_Registration_Info_UClass_UAuraWidgetController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAuraWidgetController), 1177791083U) },
+		{ Z_Construct_UClass_UAuraWidgetController, UAuraWidgetController::StaticClass, TEXT("UAuraWidgetController"), &Z_Registration_Info_UClass_UAuraWidgetController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAuraWidgetController), 129720940U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_UI_WidgetController_AuraWidgetController_h_462895588(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_UI_WidgetController_AuraWidgetController_h_4084501153(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_UI_WidgetController_AuraWidgetController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_UI_WidgetController_AuraWidgetController_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_UI_WidgetController_AuraWidgetController_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_UI_WidgetController_AuraWidgetController_h_Statics::ScriptStructInfo),
 		nullptr, 0);
