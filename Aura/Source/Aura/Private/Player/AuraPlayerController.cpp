@@ -19,6 +19,7 @@ void AAuraPlayerController::PlayerTick(float DeltaTime)
 	CursorTrace();
 }
 
+//This is used to highlight enemies with a red outline when the cursor is placed on them
 void AAuraPlayerController::CursorTrace()
 {
 	FHitResult CursorHit;

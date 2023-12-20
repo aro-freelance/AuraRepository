@@ -19,6 +19,7 @@ AAuraEnemy::AAuraEnemy()
 	
 }
 
+//the red highlight functionality called by the player controller when cursor is over enemy
 void AAuraEnemy::HighlightActor()
 {
 	GetMesh()->SetRenderCustomDepth(true);
@@ -27,6 +28,7 @@ void AAuraEnemy::HighlightActor()
 	Weapon->SetCustomDepthStencilValue(CUSTOM_DEPTH_RED);
 }
 
+//undo the red highlight functionality called by the player controller when cursor is over enemy
 void AAuraEnemy::UnHighlightActor()
 {
 	GetMesh()->SetRenderCustomDepth(false);

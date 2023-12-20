@@ -3,6 +3,9 @@
 
 #include "Character/AuraCharacterBase.h"
 
+/*
+ * This is the parent class of Player(AuraCharacter) and Enemies(AuraEnemy)
+ */
 
 AAuraCharacterBase::AAuraCharacterBase()
 {
