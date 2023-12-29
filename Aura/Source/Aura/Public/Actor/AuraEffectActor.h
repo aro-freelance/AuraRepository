@@ -78,5 +78,8 @@ protected:
 	TArray<FAuraEffect> InfiniteEffects;
 	
 	TMap<FActiveGameplayEffectHandle, UAbilitySystemComponent*> ActiveEffectHandles;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Applied Effects")
+	float EffectLevel = 1.f;
 	
 };
