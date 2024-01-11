@@ -10,9 +10,9 @@
 
 UAuraAttributeSet::UAuraAttributeSet()
 {
-	InitHealth(50.f);
+	InitHealth(100.f);
 	InitMaxHealth(100.f);
-	InitMana(50.f);
+	InitMana(100.f);
 	InitMaxMana(100.f);
 }
 
@@ -30,8 +30,7 @@ void UAuraAttributeSet::PreAttributeChange(const FGameplayAttribute& Attribute, 
 {
 	Super::PreAttributeChange(Attribute, NewValue);
 
-	//clamp max health and mana
-	if(Attribute == GetHealthAttribute())
+	//clamp values returned from querying the modifier
 	{
 		NewValue = FMath::Clamp(NewValue, 0.f, GetMaxHealth());
 	}
@@ -84,6 +83,18 @@ void UAuraAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallba
 
 	//can now access properties of the actor effected by the gameplayeffect
 	//example Properties.SourceCharacter
+
+	//clamp the actual values
+	if(Data.EvaluatedData.Attribute == GetHealthAttribute())
+	{
+		SetHealth(FMath::Clamp(GetHealth(), 0.f, GetMaxHealth()));
+	}
+
+	if(Data.EvaluatedData.Attribute == GetManaAttribute())
+	{
+		SetMana(FMath::Clamp(GetMana(), 0.f, GetMaxMana()));
+	}
+	
 }
 
 void UAuraAttributeSet::OnRep_Health(const FGameplayAttributeData& OldHealth) const
