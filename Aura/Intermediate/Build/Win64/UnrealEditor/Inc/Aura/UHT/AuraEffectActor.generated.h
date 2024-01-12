@@ -11,7 +11,6 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AActor;
 class UGameplayEffect;
-enum class EEffectRemovalPolicy : int32;
 #ifdef AURA_AuraEffectActor_generated_h
 #error "AuraEffectActor.generated.h already included, missing '#pragma once' in AuraEffectActor.h"
 #endif

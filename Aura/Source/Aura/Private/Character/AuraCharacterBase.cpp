@@ -2,6 +2,7 @@
 
 
 #include "Character/AuraCharacterBase.h"
+#include "AbilitySystemComponent.h"
 
 /*
  * This is the parent class of Player(AuraCharacter) and Enemies(AuraEnemy)
@@ -29,4 +30,17 @@ void AAuraCharacterBase::BeginPlay()
 
 void AAuraCharacterBase::InitAbilityActorInfo()
 {
+}
+
+void AAuraCharacterBase::InitializePrimaryAttributes() const
+{
+	
+	if(AbilitySystemComponent == nullptr) return;
+	check(DefaultPrimaryAttributes);
+
+	const FGameplayEffectContextHandle GameplayEffectContextHandle = AbilitySystemComponent->MakeEffectContext();
+	const FGameplayEffectSpecHandle GameplayEffectSpecHandle =
+		AbilitySystemComponent->MakeOutgoingSpec(DefaultPrimaryAttributes, 1.0f, GameplayEffectContextHandle);
+	
+	GetAbilitySystemComponent()->ApplyGameplayEffectSpecToTarget(*GameplayEffectSpecHandle.Data.Get(), AbilitySystemComponent);
 }

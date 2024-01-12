@@ -28,6 +28,13 @@ template<> AURA_API UScriptStruct* StaticStruct<struct FEffectProperties>();
 #define FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_AbilitySystem_AuraAttributeSet_h_50_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_AbilitySystem_AuraAttributeSet_h_50_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execOnRep_Charisma); \
+	DECLARE_FUNCTION(execOnRep_Mind); \
+	DECLARE_FUNCTION(execOnRep_Intelligence); \
+	DECLARE_FUNCTION(execOnRep_Agility); \
+	DECLARE_FUNCTION(execOnRep_Vitality); \
+	DECLARE_FUNCTION(execOnRep_Dexterity); \
+	DECLARE_FUNCTION(execOnRep_Strength); \
 	DECLARE_FUNCTION(execOnRep_MaxMana); \
 	DECLARE_FUNCTION(execOnRep_Mana); \
 	DECLARE_FUNCTION(execOnRep_MaxHealth); \
@@ -45,7 +52,14 @@ public: \
 	enum class ENetFields_Private : uint16 \
 	{ \
 		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
-		Health=NETFIELD_REP_START, \
+		Strength=NETFIELD_REP_START, \
+		Dexterity, \
+		Vitality, \
+		Agility, \
+		Intelligence, \
+		Mind, \
+		Charisma, \
+		Health, \
 		MaxHealth, \
 		Mana, \
 		MaxMana, \
