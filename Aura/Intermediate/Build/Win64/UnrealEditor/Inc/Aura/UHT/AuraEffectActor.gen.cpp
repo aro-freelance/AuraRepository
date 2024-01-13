@@ -11,8 +11,9 @@ void EmptyLinkFunctionForGeneratedCodeAuraEffectActor() {}
 // Cross Module References
 	AURA_API UClass* Z_Construct_UClass_AAuraEffectActor();
 	AURA_API UClass* Z_Construct_UClass_AAuraEffectActor_NoRegister();
-	AURA_API UEnum* Z_Construct_UEnum_Aura_EEffectApplicationPolicy();
-	AURA_API UEnum* Z_Construct_UEnum_Aura_EEffectRemovalPolicy();
+	AURA_API UEnum* Z_Construct_UEnum_Aura_EEffectDurationType();
+	AURA_API UEnum* Z_Construct_UEnum_Aura_EEffectOverlapApplicationPolicy();
+	AURA_API UEnum* Z_Construct_UEnum_Aura_EEffectOverlapRemovalPolicy();
 	AURA_API UScriptStruct* Z_Construct_UScriptStruct_FAuraEffect();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
@@ -20,20 +21,20 @@ void EmptyLinkFunctionForGeneratedCodeAuraEffectActor() {}
 	GAMEPLAYABILITIES_API UClass* Z_Construct_UClass_UGameplayEffect_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_Aura();
 // End Cross Module References
-	static FEnumRegistrationInfo Z_Registration_Info_UEnum_EEffectApplicationPolicy;
-	static UEnum* EEffectApplicationPolicy_StaticEnum()
+	static FEnumRegistrationInfo Z_Registration_Info_UEnum_EEffectOverlapApplicationPolicy;
+	static UEnum* EEffectOverlapApplicationPolicy_StaticEnum()
 	{
-		if (!Z_Registration_Info_UEnum_EEffectApplicationPolicy.OuterSingleton)
+		if (!Z_Registration_Info_UEnum_EEffectOverlapApplicationPolicy.OuterSingleton)
 		{
-			Z_Registration_Info_UEnum_EEffectApplicationPolicy.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_Aura_EEffectApplicationPolicy, (UObject*)Z_Construct_UPackage__Script_Aura(), TEXT("EEffectApplicationPolicy"));
+			Z_Registration_Info_UEnum_EEffectOverlapApplicationPolicy.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_Aura_EEffectOverlapApplicationPolicy, (UObject*)Z_Construct_UPackage__Script_Aura(), TEXT("EEffectOverlapApplicationPolicy"));
 		}
-		return Z_Registration_Info_UEnum_EEffectApplicationPolicy.OuterSingleton;
+		return Z_Registration_Info_UEnum_EEffectOverlapApplicationPolicy.OuterSingleton;
 	}
-	template<> AURA_API UEnum* StaticEnum<EEffectApplicationPolicy>()
+	template<> AURA_API UEnum* StaticEnum<EEffectOverlapApplicationPolicy>()
 	{
-		return EEffectApplicationPolicy_StaticEnum();
+		return EEffectOverlapApplicationPolicy_StaticEnum();
 	}
-	struct Z_Construct_UEnum_Aura_EEffectApplicationPolicy_Statics
+	struct Z_Construct_UEnum_Aura_EEffectOverlapApplicationPolicy_Statics
 	{
 		static const UECodeGen_Private::FEnumeratorParam Enumerators[];
 #if WITH_METADATA
@@ -41,54 +42,54 @@ void EmptyLinkFunctionForGeneratedCodeAuraEffectActor() {}
 #endif
 		static const UECodeGen_Private::FEnumParams EnumParams;
 	};
-	const UECodeGen_Private::FEnumeratorParam Z_Construct_UEnum_Aura_EEffectApplicationPolicy_Statics::Enumerators[] = {
-		{ "EEffectApplicationPolicy::ApplyOnOverlap", (int64)EEffectApplicationPolicy::ApplyOnOverlap },
-		{ "EEffectApplicationPolicy::ApplyOnEndOverlap", (int64)EEffectApplicationPolicy::ApplyOnEndOverlap },
-		{ "EEffectApplicationPolicy::DoNotApply", (int64)EEffectApplicationPolicy::DoNotApply },
+	const UECodeGen_Private::FEnumeratorParam Z_Construct_UEnum_Aura_EEffectOverlapApplicationPolicy_Statics::Enumerators[] = {
+		{ "EEffectOverlapApplicationPolicy::ApplyOnOverlap", (int64)EEffectOverlapApplicationPolicy::ApplyOnOverlap },
+		{ "EEffectOverlapApplicationPolicy::ApplyOnEndOverlap", (int64)EEffectOverlapApplicationPolicy::ApplyOnEndOverlap },
+		{ "EEffectOverlapApplicationPolicy::DoNotApply", (int64)EEffectOverlapApplicationPolicy::DoNotApply },
 	};
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_Aura_EEffectApplicationPolicy_Statics::Enum_MetaDataParams[] = {
-		{ "ApplyOnEndOverlap.Name", "EEffectApplicationPolicy::ApplyOnEndOverlap" },
-		{ "ApplyOnOverlap.Name", "EEffectApplicationPolicy::ApplyOnOverlap" },
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_Aura_EEffectOverlapApplicationPolicy_Statics::Enum_MetaDataParams[] = {
+		{ "ApplyOnEndOverlap.Name", "EEffectOverlapApplicationPolicy::ApplyOnEndOverlap" },
+		{ "ApplyOnOverlap.Name", "EEffectOverlapApplicationPolicy::ApplyOnOverlap" },
 		{ "BlueprintType", "true" },
-		{ "DoNotApply.Name", "EEffectApplicationPolicy::DoNotApply" },
+		{ "DoNotApply.Name", "EEffectOverlapApplicationPolicy::DoNotApply" },
 		{ "ModuleRelativePath", "Public/Actor/AuraEffectActor.h" },
 	};
 #endif
-	const UECodeGen_Private::FEnumParams Z_Construct_UEnum_Aura_EEffectApplicationPolicy_Statics::EnumParams = {
+	const UECodeGen_Private::FEnumParams Z_Construct_UEnum_Aura_EEffectOverlapApplicationPolicy_Statics::EnumParams = {
 		(UObject*(*)())Z_Construct_UPackage__Script_Aura,
 		nullptr,
-		"EEffectApplicationPolicy",
-		"EEffectApplicationPolicy",
-		Z_Construct_UEnum_Aura_EEffectApplicationPolicy_Statics::Enumerators,
+		"EEffectOverlapApplicationPolicy",
+		"EEffectOverlapApplicationPolicy",
+		Z_Construct_UEnum_Aura_EEffectOverlapApplicationPolicy_Statics::Enumerators,
 		RF_Public|RF_Transient|RF_MarkAsNative,
-		UE_ARRAY_COUNT(Z_Construct_UEnum_Aura_EEffectApplicationPolicy_Statics::Enumerators),
+		UE_ARRAY_COUNT(Z_Construct_UEnum_Aura_EEffectOverlapApplicationPolicy_Statics::Enumerators),
 		EEnumFlags::None,
 		(uint8)UEnum::ECppForm::EnumClass,
-		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UEnum_Aura_EEffectApplicationPolicy_Statics::Enum_MetaDataParams), Z_Construct_UEnum_Aura_EEffectApplicationPolicy_Statics::Enum_MetaDataParams)
+		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UEnum_Aura_EEffectOverlapApplicationPolicy_Statics::Enum_MetaDataParams), Z_Construct_UEnum_Aura_EEffectOverlapApplicationPolicy_Statics::Enum_MetaDataParams)
 	};
-	UEnum* Z_Construct_UEnum_Aura_EEffectApplicationPolicy()
+	UEnum* Z_Construct_UEnum_Aura_EEffectOverlapApplicationPolicy()
 	{
-		if (!Z_Registration_Info_UEnum_EEffectApplicationPolicy.InnerSingleton)
+		if (!Z_Registration_Info_UEnum_EEffectOverlapApplicationPolicy.InnerSingleton)
 		{
-			UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_EEffectApplicationPolicy.InnerSingleton, Z_Construct_UEnum_Aura_EEffectApplicationPolicy_Statics::EnumParams);
+			UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_EEffectOverlapApplicationPolicy.InnerSingleton, Z_Construct_UEnum_Aura_EEffectOverlapApplicationPolicy_Statics::EnumParams);
 		}
-		return Z_Registration_Info_UEnum_EEffectApplicationPolicy.InnerSingleton;
+		return Z_Registration_Info_UEnum_EEffectOverlapApplicationPolicy.InnerSingleton;
 	}
-	static FEnumRegistrationInfo Z_Registration_Info_UEnum_EEffectRemovalPolicy;
-	static UEnum* EEffectRemovalPolicy_StaticEnum()
+	static FEnumRegistrationInfo Z_Registration_Info_UEnum_EEffectOverlapRemovalPolicy;
+	static UEnum* EEffectOverlapRemovalPolicy_StaticEnum()
 	{
-		if (!Z_Registration_Info_UEnum_EEffectRemovalPolicy.OuterSingleton)
+		if (!Z_Registration_Info_UEnum_EEffectOverlapRemovalPolicy.OuterSingleton)
 		{
-			Z_Registration_Info_UEnum_EEffectRemovalPolicy.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_Aura_EEffectRemovalPolicy, (UObject*)Z_Construct_UPackage__Script_Aura(), TEXT("EEffectRemovalPolicy"));
+			Z_Registration_Info_UEnum_EEffectOverlapRemovalPolicy.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_Aura_EEffectOverlapRemovalPolicy, (UObject*)Z_Construct_UPackage__Script_Aura(), TEXT("EEffectOverlapRemovalPolicy"));
 		}
-		return Z_Registration_Info_UEnum_EEffectRemovalPolicy.OuterSingleton;
+		return Z_Registration_Info_UEnum_EEffectOverlapRemovalPolicy.OuterSingleton;
 	}
-	template<> AURA_API UEnum* StaticEnum<EEffectRemovalPolicy>()
+	template<> AURA_API UEnum* StaticEnum<EEffectOverlapRemovalPolicy>()
 	{
-		return EEffectRemovalPolicy_StaticEnum();
+		return EEffectOverlapRemovalPolicy_StaticEnum();
 	}
-	struct Z_Construct_UEnum_Aura_EEffectRemovalPolicy_Statics
+	struct Z_Construct_UEnum_Aura_EEffectOverlapRemovalPolicy_Statics
 	{
 		static const UECodeGen_Private::FEnumeratorParam Enumerators[];
 #if WITH_METADATA
@@ -96,37 +97,92 @@ void EmptyLinkFunctionForGeneratedCodeAuraEffectActor() {}
 #endif
 		static const UECodeGen_Private::FEnumParams EnumParams;
 	};
-	const UECodeGen_Private::FEnumeratorParam Z_Construct_UEnum_Aura_EEffectRemovalPolicy_Statics::Enumerators[] = {
-		{ "EEffectRemovalPolicy::RemoveOnEndOverlap", (int64)EEffectRemovalPolicy::RemoveOnEndOverlap },
-		{ "EEffectRemovalPolicy::DoNotRemove", (int64)EEffectRemovalPolicy::DoNotRemove },
+	const UECodeGen_Private::FEnumeratorParam Z_Construct_UEnum_Aura_EEffectOverlapRemovalPolicy_Statics::Enumerators[] = {
+		{ "EEffectOverlapRemovalPolicy::RemoveOnEndOverlap", (int64)EEffectOverlapRemovalPolicy::RemoveOnEndOverlap },
+		{ "EEffectOverlapRemovalPolicy::DoNotRemove", (int64)EEffectOverlapRemovalPolicy::DoNotRemove },
 	};
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_Aura_EEffectRemovalPolicy_Statics::Enum_MetaDataParams[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_Aura_EEffectOverlapRemovalPolicy_Statics::Enum_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
-		{ "DoNotRemove.Name", "EEffectRemovalPolicy::DoNotRemove" },
+		{ "DoNotRemove.Name", "EEffectOverlapRemovalPolicy::DoNotRemove" },
 		{ "ModuleRelativePath", "Public/Actor/AuraEffectActor.h" },
-		{ "RemoveOnEndOverlap.Name", "EEffectRemovalPolicy::RemoveOnEndOverlap" },
+		{ "RemoveOnEndOverlap.Name", "EEffectOverlapRemovalPolicy::RemoveOnEndOverlap" },
 	};
 #endif
-	const UECodeGen_Private::FEnumParams Z_Construct_UEnum_Aura_EEffectRemovalPolicy_Statics::EnumParams = {
+	const UECodeGen_Private::FEnumParams Z_Construct_UEnum_Aura_EEffectOverlapRemovalPolicy_Statics::EnumParams = {
 		(UObject*(*)())Z_Construct_UPackage__Script_Aura,
 		nullptr,
-		"EEffectRemovalPolicy",
-		"EEffectRemovalPolicy",
-		Z_Construct_UEnum_Aura_EEffectRemovalPolicy_Statics::Enumerators,
+		"EEffectOverlapRemovalPolicy",
+		"EEffectOverlapRemovalPolicy",
+		Z_Construct_UEnum_Aura_EEffectOverlapRemovalPolicy_Statics::Enumerators,
 		RF_Public|RF_Transient|RF_MarkAsNative,
-		UE_ARRAY_COUNT(Z_Construct_UEnum_Aura_EEffectRemovalPolicy_Statics::Enumerators),
+		UE_ARRAY_COUNT(Z_Construct_UEnum_Aura_EEffectOverlapRemovalPolicy_Statics::Enumerators),
 		EEnumFlags::None,
 		(uint8)UEnum::ECppForm::EnumClass,
-		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UEnum_Aura_EEffectRemovalPolicy_Statics::Enum_MetaDataParams), Z_Construct_UEnum_Aura_EEffectRemovalPolicy_Statics::Enum_MetaDataParams)
+		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UEnum_Aura_EEffectOverlapRemovalPolicy_Statics::Enum_MetaDataParams), Z_Construct_UEnum_Aura_EEffectOverlapRemovalPolicy_Statics::Enum_MetaDataParams)
 	};
-	UEnum* Z_Construct_UEnum_Aura_EEffectRemovalPolicy()
+	UEnum* Z_Construct_UEnum_Aura_EEffectOverlapRemovalPolicy()
 	{
-		if (!Z_Registration_Info_UEnum_EEffectRemovalPolicy.InnerSingleton)
+		if (!Z_Registration_Info_UEnum_EEffectOverlapRemovalPolicy.InnerSingleton)
 		{
-			UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_EEffectRemovalPolicy.InnerSingleton, Z_Construct_UEnum_Aura_EEffectRemovalPolicy_Statics::EnumParams);
+			UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_EEffectOverlapRemovalPolicy.InnerSingleton, Z_Construct_UEnum_Aura_EEffectOverlapRemovalPolicy_Statics::EnumParams);
 		}
-		return Z_Registration_Info_UEnum_EEffectRemovalPolicy.InnerSingleton;
+		return Z_Registration_Info_UEnum_EEffectOverlapRemovalPolicy.InnerSingleton;
+	}
+	static FEnumRegistrationInfo Z_Registration_Info_UEnum_EEffectDurationType;
+	static UEnum* EEffectDurationType_StaticEnum()
+	{
+		if (!Z_Registration_Info_UEnum_EEffectDurationType.OuterSingleton)
+		{
+			Z_Registration_Info_UEnum_EEffectDurationType.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_Aura_EEffectDurationType, (UObject*)Z_Construct_UPackage__Script_Aura(), TEXT("EEffectDurationType"));
+		}
+		return Z_Registration_Info_UEnum_EEffectDurationType.OuterSingleton;
+	}
+	template<> AURA_API UEnum* StaticEnum<EEffectDurationType>()
+	{
+		return EEffectDurationType_StaticEnum();
+	}
+	struct Z_Construct_UEnum_Aura_EEffectDurationType_Statics
+	{
+		static const UECodeGen_Private::FEnumeratorParam Enumerators[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FEnumParams EnumParams;
+	};
+	const UECodeGen_Private::FEnumeratorParam Z_Construct_UEnum_Aura_EEffectDurationType_Statics::Enumerators[] = {
+		{ "EEffectDurationType::Instant", (int64)EEffectDurationType::Instant },
+		{ "EEffectDurationType::Duration", (int64)EEffectDurationType::Duration },
+		{ "EEffectDurationType::Infinite", (int64)EEffectDurationType::Infinite },
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_Aura_EEffectDurationType_Statics::Enum_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "Duration.Name", "EEffectDurationType::Duration" },
+		{ "Infinite.Name", "EEffectDurationType::Infinite" },
+		{ "Instant.Name", "EEffectDurationType::Instant" },
+		{ "ModuleRelativePath", "Public/Actor/AuraEffectActor.h" },
+	};
+#endif
+	const UECodeGen_Private::FEnumParams Z_Construct_UEnum_Aura_EEffectDurationType_Statics::EnumParams = {
+		(UObject*(*)())Z_Construct_UPackage__Script_Aura,
+		nullptr,
+		"EEffectDurationType",
+		"EEffectDurationType",
+		Z_Construct_UEnum_Aura_EEffectDurationType_Statics::Enumerators,
+		RF_Public|RF_Transient|RF_MarkAsNative,
+		UE_ARRAY_COUNT(Z_Construct_UEnum_Aura_EEffectDurationType_Statics::Enumerators),
+		EEnumFlags::None,
+		(uint8)UEnum::ECppForm::EnumClass,
+		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UEnum_Aura_EEffectDurationType_Statics::Enum_MetaDataParams), Z_Construct_UEnum_Aura_EEffectDurationType_Statics::Enum_MetaDataParams)
+	};
+	UEnum* Z_Construct_UEnum_Aura_EEffectDurationType()
+	{
+		if (!Z_Registration_Info_UEnum_EEffectDurationType.InnerSingleton)
+		{
+			UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_EEffectDurationType.InnerSingleton, Z_Construct_UEnum_Aura_EEffectDurationType_Statics::EnumParams);
+		}
+		return Z_Registration_Info_UEnum_EEffectDurationType.InnerSingleton;
 	}
 	static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_AuraEffect;
 class UScriptStruct* FAuraEffect::StaticStruct()
@@ -151,6 +207,11 @@ template<> AURA_API UScriptStruct* StaticStruct<FAuraEffect>()
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_GameplayEffectClass_MetaData[];
 #endif
 		static const UECodeGen_Private::FClassPropertyParams NewProp_GameplayEffectClass;
+		static const UECodeGen_Private::FIntPropertyParams NewProp_EffectDurationType_Underlying;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_EffectDurationType_MetaData[];
+#endif
+		static const UECodeGen_Private::FEnumPropertyParams NewProp_EffectDurationType;
 		static const UECodeGen_Private::FIntPropertyParams NewProp_EffectApplicationPolicy_Underlying;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_EffectApplicationPolicy_MetaData[];
@@ -181,6 +242,14 @@ template<> AURA_API UScriptStruct* StaticStruct<FAuraEffect>()
 	};
 #endif
 	const UECodeGen_Private::FClassPropertyParams Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_GameplayEffectClass = { "GameplayEffectClass", nullptr, (EPropertyFlags)0x0014000000000015, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FAuraEffect, GameplayEffectClass), Z_Construct_UClass_UClass, Z_Construct_UClass_UGameplayEffect_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_GameplayEffectClass_MetaData), Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_GameplayEffectClass_MetaData) };
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectDurationType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectDurationType_MetaData[] = {
+		{ "Category", "Aura Effect" },
+		{ "ModuleRelativePath", "Public/Actor/AuraEffectActor.h" },
+	};
+#endif
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectDurationType = { "EffectDurationType", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FAuraEffect, EffectDurationType), Z_Construct_UEnum_Aura_EEffectDurationType, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectDurationType_MetaData), Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectDurationType_MetaData) }; // 1611868530
 	const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectApplicationPolicy_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectApplicationPolicy_MetaData[] = {
@@ -188,7 +257,7 @@ template<> AURA_API UScriptStruct* StaticStruct<FAuraEffect>()
 		{ "ModuleRelativePath", "Public/Actor/AuraEffectActor.h" },
 	};
 #endif
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectApplicationPolicy = { "EffectApplicationPolicy", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FAuraEffect, EffectApplicationPolicy), Z_Construct_UEnum_Aura_EEffectApplicationPolicy, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectApplicationPolicy_MetaData), Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectApplicationPolicy_MetaData) }; // 1722026963
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectApplicationPolicy = { "EffectApplicationPolicy", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FAuraEffect, EffectApplicationPolicy), Z_Construct_UEnum_Aura_EEffectOverlapApplicationPolicy, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectApplicationPolicy_MetaData), Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectApplicationPolicy_MetaData) }; // 1332297701
 	const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectRemovalPolicy_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectRemovalPolicy_MetaData[] = {
@@ -196,9 +265,11 @@ template<> AURA_API UScriptStruct* StaticStruct<FAuraEffect>()
 		{ "ModuleRelativePath", "Public/Actor/AuraEffectActor.h" },
 	};
 #endif
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectRemovalPolicy = { "EffectRemovalPolicy", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FAuraEffect, EffectRemovalPolicy), Z_Construct_UEnum_Aura_EEffectRemovalPolicy, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectRemovalPolicy_MetaData), Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectRemovalPolicy_MetaData) }; // 3097338331
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectRemovalPolicy = { "EffectRemovalPolicy", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FAuraEffect, EffectRemovalPolicy), Z_Construct_UEnum_Aura_EEffectOverlapRemovalPolicy, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectRemovalPolicy_MetaData), Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectRemovalPolicy_MetaData) }; // 1157051845
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FAuraEffect_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_GameplayEffectClass,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectDurationType_Underlying,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectDurationType,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectApplicationPolicy_Underlying,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectApplicationPolicy,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FAuraEffect_Statics::NewProp_EffectRemovalPolicy_Underlying,
@@ -242,6 +313,15 @@ template<> AURA_API UScriptStruct* StaticStruct<FAuraEffect>()
 		P_THIS->OnOverlap(Z_Param_TargetActor);
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(AAuraEffectActor::execApplyEffectArrayToTarget)
+	{
+		P_GET_OBJECT(AActor,Z_Param_TargetActor);
+		P_GET_TARRAY(FAuraEffect,Z_Param_EffectClassArray);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->ApplyEffectArrayToTarget(Z_Param_TargetActor,Z_Param_EffectClassArray);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AAuraEffectActor::execApplyEffectToTarget)
 	{
 		P_GET_OBJECT(AActor,Z_Param_TargetActor);
@@ -255,11 +335,59 @@ template<> AURA_API UScriptStruct* StaticStruct<FAuraEffect>()
 	{
 		UClass* Class = AAuraEffectActor::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "ApplyEffectArrayToTarget", &AAuraEffectActor::execApplyEffectArrayToTarget },
 			{ "ApplyEffectToTarget", &AAuraEffectActor::execApplyEffectToTarget },
 			{ "OnEndOverlap", &AAuraEffectActor::execOnEndOverlap },
 			{ "OnOverlap", &AAuraEffectActor::execOnOverlap },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AAuraEffectActor_ApplyEffectArrayToTarget_Statics
+	{
+		struct AuraEffectActor_eventApplyEffectArrayToTarget_Parms
+		{
+			AActor* TargetActor;
+			TArray<FAuraEffect> EffectClassArray;
+		};
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_TargetActor;
+		static const UECodeGen_Private::FStructPropertyParams NewProp_EffectClassArray_Inner;
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_EffectClassArray;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AAuraEffectActor_ApplyEffectArrayToTarget_Statics::NewProp_TargetActor = { "TargetActor", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AuraEffectActor_eventApplyEffectArrayToTarget_Parms, TargetActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AAuraEffectActor_ApplyEffectArrayToTarget_Statics::NewProp_EffectClassArray_Inner = { "EffectClassArray", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FAuraEffect, METADATA_PARAMS(0, nullptr) }; // 1908864833
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_AAuraEffectActor_ApplyEffectArrayToTarget_Statics::NewProp_EffectClassArray = { "EffectClassArray", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AuraEffectActor_eventApplyEffectArrayToTarget_Parms, EffectClassArray), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) }; // 1908864833
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAuraEffectActor_ApplyEffectArrayToTarget_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAuraEffectActor_ApplyEffectArrayToTarget_Statics::NewProp_TargetActor,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAuraEffectActor_ApplyEffectArrayToTarget_Statics::NewProp_EffectClassArray_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAuraEffectActor_ApplyEffectArrayToTarget_Statics::NewProp_EffectClassArray,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AAuraEffectActor_ApplyEffectArrayToTarget_Statics::Function_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/*  Array Effects */" },
+#endif
+		{ "ModuleRelativePath", "Public/Actor/AuraEffectActor.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Array Effects" },
+#endif
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAuraEffectActor_ApplyEffectArrayToTarget_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AAuraEffectActor, nullptr, "ApplyEffectArrayToTarget", nullptr, nullptr, Z_Construct_UFunction_AAuraEffectActor_ApplyEffectArrayToTarget_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AAuraEffectActor_ApplyEffectArrayToTarget_Statics::PropPointers), sizeof(Z_Construct_UFunction_AAuraEffectActor_ApplyEffectArrayToTarget_Statics::AuraEffectActor_eventApplyEffectArrayToTarget_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AAuraEffectActor_ApplyEffectArrayToTarget_Statics::Function_MetaDataParams), Z_Construct_UFunction_AAuraEffectActor_ApplyEffectArrayToTarget_Statics::Function_MetaDataParams) };
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AAuraEffectActor_ApplyEffectArrayToTarget_Statics::PropPointers) < 2048);
+	static_assert(sizeof(Z_Construct_UFunction_AAuraEffectActor_ApplyEffectArrayToTarget_Statics::AuraEffectActor_eventApplyEffectArrayToTarget_Parms) < MAX_uint16);
+	UFunction* Z_Construct_UFunction_AAuraEffectActor_ApplyEffectArrayToTarget()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AAuraEffectActor_ApplyEffectArrayToTarget_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_AAuraEffectActor_ApplyEffectToTarget_Statics
 	{
@@ -445,6 +573,7 @@ template<> AURA_API UScriptStruct* StaticStruct<FAuraEffect>()
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraEffectActor_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_AAuraEffectActor_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AAuraEffectActor_ApplyEffectArrayToTarget, "ApplyEffectArrayToTarget" }, // 3916703739
 		{ &Z_Construct_UFunction_AAuraEffectActor_ApplyEffectToTarget, "ApplyEffectToTarget" }, // 1291832855
 		{ &Z_Construct_UFunction_AAuraEffectActor_OnEndOverlap, "OnEndOverlap" }, // 1623007178
 		{ &Z_Construct_UFunction_AAuraEffectActor_OnOverlap, "OnOverlap" }, // 1093760845
@@ -487,7 +616,7 @@ template<> AURA_API UScriptStruct* StaticStruct<FAuraEffect>()
 		{ "ModuleRelativePath", "Public/Actor/AuraEffectActor.h" },
 	};
 #endif
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InstantEffectApplicationPolicy = { "InstantEffectApplicationPolicy", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraEffectActor, InstantEffectApplicationPolicy), Z_Construct_UEnum_Aura_EEffectApplicationPolicy, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InstantEffectApplicationPolicy_MetaData), Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InstantEffectApplicationPolicy_MetaData) }; // 1722026963
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InstantEffectApplicationPolicy = { "InstantEffectApplicationPolicy", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraEffectActor, InstantEffectApplicationPolicy), Z_Construct_UEnum_Aura_EEffectOverlapApplicationPolicy, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InstantEffectApplicationPolicy_MetaData), Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InstantEffectApplicationPolicy_MetaData) }; // 1332297701
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_DurationGameplayEffectClass_MetaData[] = {
 		{ "Category", "Applied Effects" },
@@ -502,7 +631,7 @@ template<> AURA_API UScriptStruct* StaticStruct<FAuraEffect>()
 		{ "ModuleRelativePath", "Public/Actor/AuraEffectActor.h" },
 	};
 #endif
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_DurationEffectApplicationPolicy = { "DurationEffectApplicationPolicy", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraEffectActor, DurationEffectApplicationPolicy), Z_Construct_UEnum_Aura_EEffectApplicationPolicy, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_DurationEffectApplicationPolicy_MetaData), Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_DurationEffectApplicationPolicy_MetaData) }; // 1722026963
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_DurationEffectApplicationPolicy = { "DurationEffectApplicationPolicy", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraEffectActor, DurationEffectApplicationPolicy), Z_Construct_UEnum_Aura_EEffectOverlapApplicationPolicy, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_DurationEffectApplicationPolicy_MetaData), Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_DurationEffectApplicationPolicy_MetaData) }; // 1332297701
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteGameplayEffectClass_MetaData[] = {
 		{ "Category", "Applied Effects" },
@@ -517,7 +646,7 @@ template<> AURA_API UScriptStruct* StaticStruct<FAuraEffect>()
 		{ "ModuleRelativePath", "Public/Actor/AuraEffectActor.h" },
 	};
 #endif
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffectApplicationPolicy = { "InfiniteEffectApplicationPolicy", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraEffectActor, InfiniteEffectApplicationPolicy), Z_Construct_UEnum_Aura_EEffectApplicationPolicy, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffectApplicationPolicy_MetaData), Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffectApplicationPolicy_MetaData) }; // 1722026963
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffectApplicationPolicy = { "InfiniteEffectApplicationPolicy", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraEffectActor, InfiniteEffectApplicationPolicy), Z_Construct_UEnum_Aura_EEffectOverlapApplicationPolicy, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffectApplicationPolicy_MetaData), Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffectApplicationPolicy_MetaData) }; // 1332297701
 	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffectRemovalPolicy_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffectRemovalPolicy_MetaData[] = {
@@ -525,37 +654,31 @@ template<> AURA_API UScriptStruct* StaticStruct<FAuraEffect>()
 		{ "ModuleRelativePath", "Public/Actor/AuraEffectActor.h" },
 	};
 #endif
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffectRemovalPolicy = { "InfiniteEffectRemovalPolicy", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraEffectActor, InfiniteEffectRemovalPolicy), Z_Construct_UEnum_Aura_EEffectRemovalPolicy, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffectRemovalPolicy_MetaData), Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffectRemovalPolicy_MetaData) }; // 3097338331
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InstantEffects_Inner = { "InstantEffects", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FAuraEffect, METADATA_PARAMS(0, nullptr) }; // 406621557
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffectRemovalPolicy = { "InfiniteEffectRemovalPolicy", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraEffectActor, InfiniteEffectRemovalPolicy), Z_Construct_UEnum_Aura_EEffectOverlapRemovalPolicy, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffectRemovalPolicy_MetaData), Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffectRemovalPolicy_MetaData) }; // 1157051845
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InstantEffects_Inner = { "InstantEffects", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FAuraEffect, METADATA_PARAMS(0, nullptr) }; // 1908864833
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InstantEffects_MetaData[] = {
 		{ "Category", "Applied Effects" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/* Arrays */" },
-#endif
 		{ "ModuleRelativePath", "Public/Actor/AuraEffectActor.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Arrays" },
-#endif
 	};
 #endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InstantEffects = { "InstantEffects", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraEffectActor, InstantEffects), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InstantEffects_MetaData), Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InstantEffects_MetaData) }; // 406621557
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_DurationEffects_Inner = { "DurationEffects", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FAuraEffect, METADATA_PARAMS(0, nullptr) }; // 406621557
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InstantEffects = { "InstantEffects", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraEffectActor, InstantEffects), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InstantEffects_MetaData), Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InstantEffects_MetaData) }; // 1908864833
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_DurationEffects_Inner = { "DurationEffects", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FAuraEffect, METADATA_PARAMS(0, nullptr) }; // 1908864833
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_DurationEffects_MetaData[] = {
 		{ "Category", "Applied Effects" },
 		{ "ModuleRelativePath", "Public/Actor/AuraEffectActor.h" },
 	};
 #endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_DurationEffects = { "DurationEffects", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraEffectActor, DurationEffects), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_DurationEffects_MetaData), Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_DurationEffects_MetaData) }; // 406621557
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffects_Inner = { "InfiniteEffects", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FAuraEffect, METADATA_PARAMS(0, nullptr) }; // 406621557
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_DurationEffects = { "DurationEffects", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraEffectActor, DurationEffects), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_DurationEffects_MetaData), Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_DurationEffects_MetaData) }; // 1908864833
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffects_Inner = { "InfiniteEffects", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FAuraEffect, METADATA_PARAMS(0, nullptr) }; // 1908864833
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffects_MetaData[] = {
 		{ "Category", "Applied Effects" },
 		{ "ModuleRelativePath", "Public/Actor/AuraEffectActor.h" },
 	};
 #endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffects = { "InfiniteEffects", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraEffectActor, InfiniteEffects), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffects_MetaData), Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffects_MetaData) }; // 406621557
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffects = { "InfiniteEffects", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAuraEffectActor, InfiniteEffects), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffects_MetaData), Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_InfiniteEffects_MetaData) }; // 1908864833
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAuraEffectActor_Statics::NewProp_EffectLevel_MetaData[] = {
 		{ "Category", "Applied Effects" },
@@ -624,16 +747,17 @@ template<> AURA_API UScriptStruct* StaticStruct<FAuraEffect>()
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_Actor_AuraEffectActor_h_Statics::EnumInfo[] = {
-		{ EEffectApplicationPolicy_StaticEnum, TEXT("EEffectApplicationPolicy"), &Z_Registration_Info_UEnum_EEffectApplicationPolicy, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1722026963U) },
-		{ EEffectRemovalPolicy_StaticEnum, TEXT("EEffectRemovalPolicy"), &Z_Registration_Info_UEnum_EEffectRemovalPolicy, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3097338331U) },
+		{ EEffectOverlapApplicationPolicy_StaticEnum, TEXT("EEffectOverlapApplicationPolicy"), &Z_Registration_Info_UEnum_EEffectOverlapApplicationPolicy, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1332297701U) },
+		{ EEffectOverlapRemovalPolicy_StaticEnum, TEXT("EEffectOverlapRemovalPolicy"), &Z_Registration_Info_UEnum_EEffectOverlapRemovalPolicy, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1157051845U) },
+		{ EEffectDurationType_StaticEnum, TEXT("EEffectDurationType"), &Z_Registration_Info_UEnum_EEffectDurationType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1611868530U) },
 	};
 	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_Actor_AuraEffectActor_h_Statics::ScriptStructInfo[] = {
-		{ FAuraEffect::StaticStruct, Z_Construct_UScriptStruct_FAuraEffect_Statics::NewStructOps, TEXT("AuraEffect"), &Z_Registration_Info_UScriptStruct_AuraEffect, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FAuraEffect), 406621557U) },
+		{ FAuraEffect::StaticStruct, Z_Construct_UScriptStruct_FAuraEffect_Statics::NewStructOps, TEXT("AuraEffect"), &Z_Registration_Info_UScriptStruct_AuraEffect, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FAuraEffect), 1908864833U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_Actor_AuraEffectActor_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AAuraEffectActor, AAuraEffectActor::StaticClass, TEXT("AAuraEffectActor"), &Z_Registration_Info_UClass_AAuraEffectActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAuraEffectActor), 3931744735U) },
+		{ Z_Construct_UClass_AAuraEffectActor, AAuraEffectActor::StaticClass, TEXT("AAuraEffectActor"), &Z_Registration_Info_UClass_AAuraEffectActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAuraEffectActor), 1230198134U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_Actor_AuraEffectActor_h_3502228042(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_Actor_AuraEffectActor_h_1670395608(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_Actor_AuraEffectActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_Actor_AuraEffectActor_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_Actor_AuraEffectActor_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_Actor_AuraEffectActor_h_Statics::ScriptStructInfo),
 		Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_Actor_AuraEffectActor_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_Actor_AuraEffectActor_h_Statics::EnumInfo));

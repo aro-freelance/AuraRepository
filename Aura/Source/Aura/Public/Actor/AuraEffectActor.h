@@ -11,7 +11,7 @@ class UAbilitySystemComponent;
 class UGameplayEffect;
 
 UENUM(BlueprintType)
-enum class EEffectApplicationPolicy
+enum class EEffectOverlapApplicationPolicy
 {
 	ApplyOnOverlap,
 	ApplyOnEndOverlap,
@@ -19,11 +19,20 @@ enum class EEffectApplicationPolicy
 };
 
 UENUM(BlueprintType)
-enum class EEffectRemovalPolicy
+enum class EEffectOverlapRemovalPolicy
 {
 	RemoveOnEndOverlap,
 	DoNotRemove
 };
+
+UENUM(BlueprintType)
+enum class EEffectDurationType
+{
+	Instant,
+	Duration,
+	Infinite
+};
+
 
 USTRUCT(BlueprintType)
 struct FAuraEffect
@@ -32,13 +41,16 @@ struct FAuraEffect
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Aura Effect")
 	TSubclassOf<UGameplayEffect> GameplayEffectClass;
-	
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Aura Effect")
-	EEffectApplicationPolicy EffectApplicationPolicy = EEffectApplicationPolicy::DoNotApply;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Aura Effect")
-	EEffectRemovalPolicy EffectRemovalPolicy = EEffectRemovalPolicy::DoNotRemove;
+	EEffectDurationType EffectDurationType = EEffectDurationType::Instant;
 	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Aura Effect")
+	EEffectOverlapApplicationPolicy EffectApplicationPolicy = EEffectOverlapApplicationPolicy::DoNotApply;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Aura Effect")
+	EEffectOverlapRemovalPolicy EffectRemovalPolicy = EEffectOverlapRemovalPolicy::DoNotRemove;
+
 };
 
 UCLASS()
@@ -51,21 +63,10 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
-
+	
 
 	
-	UFUNCTION(BlueprintCallable)
-	void ApplyEffectToTarget(AActor* TargetActor, TSubclassOf<UGameplayEffect> EffectClass);
-	
-	UFUNCTION(BlueprintCallable)
-	void OnOverlap(AActor* TargetActor);
-	
-	UFUNCTION(BlueprintCallable)
-	void OnEndOverlap(AActor* TargetActor);
-
-
-
-	/* Single Effect Class */
+	 /* Single Effect Class */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Applied Effects")
 	bool bDestroyOnEffectRemoval = false;
 
@@ -73,27 +74,36 @@ protected:
 	TSubclassOf<UGameplayEffect> InstantGameplayEffectClass;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Applied Effects")
-	EEffectApplicationPolicy InstantEffectApplicationPolicy = EEffectApplicationPolicy::DoNotApply;
+	EEffectOverlapApplicationPolicy InstantEffectApplicationPolicy = EEffectOverlapApplicationPolicy::DoNotApply;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Applied Effects")
 	TSubclassOf<UGameplayEffect> DurationGameplayEffectClass;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Applied Effects")
-	EEffectApplicationPolicy DurationEffectApplicationPolicy = EEffectApplicationPolicy::DoNotApply;
+	EEffectOverlapApplicationPolicy DurationEffectApplicationPolicy = EEffectOverlapApplicationPolicy::DoNotApply;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Applied Effects")
 	TSubclassOf<UGameplayEffect> InfiniteGameplayEffectClass;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Applied Effects")
-	EEffectApplicationPolicy InfiniteEffectApplicationPolicy = EEffectApplicationPolicy::DoNotApply;
+	EEffectOverlapApplicationPolicy InfiniteEffectApplicationPolicy = EEffectOverlapApplicationPolicy::DoNotApply;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Applied Effects")
-	EEffectRemovalPolicy InfiniteEffectRemovalPolicy = EEffectRemovalPolicy::RemoveOnEndOverlap;
-
-
-
+	EEffectOverlapRemovalPolicy InfiniteEffectRemovalPolicy = EEffectOverlapRemovalPolicy::RemoveOnEndOverlap;
 	
-	/* Arrays */
+	UFUNCTION(BlueprintCallable)
+	void ApplyEffectToTarget(AActor* TargetActor, TSubclassOf<UGameplayEffect> EffectClass);
+
+	/*  Array Effects */
+
+	UFUNCTION(BlueprintCallable)
+	void ApplyEffectArrayToTarget(AActor* TargetActor, TArray<FAuraEffect> EffectClassArray);
+	
+	UFUNCTION(BlueprintCallable)
+	void OnOverlap(AActor* TargetActor);
+	
+	UFUNCTION(BlueprintCallable)
+	void OnEndOverlap(AActor* TargetActor);
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Applied Effects")
 	TArray<FAuraEffect> InstantEffects;
