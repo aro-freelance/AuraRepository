@@ -10,10 +10,8 @@
 
 UAuraAttributeSet::UAuraAttributeSet()
 {
-	InitHealth(100.f);
-	InitMaxHealth(100.f);
-	InitMana(100.f);
-	InitMaxMana(100.f);
+	InitHealth(10.f);
+	InitMana(10.f);
 }
 
 void UAuraAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
@@ -48,19 +46,22 @@ void UAuraAttributeSet::PreAttributeChange(const FGameplayAttribute& Attribute, 
 {
 	Super::PreAttributeChange(Attribute, NewValue);
 
-	//clamp values returned from querying the modifier
+	/*//clamp values returned from querying the modifier
 	{
 		NewValue = FMath::Clamp(NewValue, 0.f, GetMaxHealth());
 	}
 	if(Attribute == GetManaAttribute())
 	{
 		NewValue = FMath::Clamp(NewValue, 0.f, GetMaxMana());
-	}
+	}*/
 }
 
 void UAuraAttributeSet::SetEffectProperties(const FGameplayEffectModCallbackData& Data, FEffectProperties& Properties)
 {
 	// Source = effect causer, Target = effect receiver
+
+	
+	UE_LOG(LogTemp, Warning, TEXT("Set Effect Properties"));
 
 	Properties.EffectContextHandle = Data.EffectSpec.GetContext();
 	Properties.SourceASC = Properties.EffectContextHandle.GetOriginalInstigatorAbilitySystemComponent();

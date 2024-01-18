@@ -28,6 +28,16 @@ template<> AURA_API UScriptStruct* StaticStruct<struct FEffectProperties>();
 #define FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_AbilitySystem_AuraAttributeSet_h_50_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_AbilitySystem_AuraAttributeSet_h_50_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execOnRep_MaxMana); \
+	DECLARE_FUNCTION(execOnRep_MaxHealth); \
+	DECLARE_FUNCTION(execOnRep_ManaRegen); \
+	DECLARE_FUNCTION(execOnRep_HealthRegen); \
+	DECLARE_FUNCTION(execOnRep_CriticalHitResistance); \
+	DECLARE_FUNCTION(execOnRep_CriticalDamage); \
+	DECLARE_FUNCTION(execOnRep_CriticalChance); \
+	DECLARE_FUNCTION(execOnRep_BlockChance); \
+	DECLARE_FUNCTION(execOnRep_ArmorPenetration); \
+	DECLARE_FUNCTION(execOnRep_Armor); \
 	DECLARE_FUNCTION(execOnRep_Charisma); \
 	DECLARE_FUNCTION(execOnRep_Mind); \
 	DECLARE_FUNCTION(execOnRep_Intelligence); \
@@ -35,9 +45,7 @@ template<> AURA_API UScriptStruct* StaticStruct<struct FEffectProperties>();
 	DECLARE_FUNCTION(execOnRep_Vitality); \
 	DECLARE_FUNCTION(execOnRep_Dexterity); \
 	DECLARE_FUNCTION(execOnRep_Strength); \
-	DECLARE_FUNCTION(execOnRep_MaxMana); \
 	DECLARE_FUNCTION(execOnRep_Mana); \
-	DECLARE_FUNCTION(execOnRep_MaxHealth); \
 	DECLARE_FUNCTION(execOnRep_Health);
 
 
@@ -52,16 +60,24 @@ public: \
 	enum class ENetFields_Private : uint16 \
 	{ \
 		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
-		Strength=NETFIELD_REP_START, \
+		Health=NETFIELD_REP_START, \
+		Mana, \
+		Strength, \
 		Dexterity, \
 		Vitality, \
 		Agility, \
 		Intelligence, \
 		Mind, \
 		Charisma, \
-		Health, \
+		Armor, \
+		ArmorPenetration, \
+		BlockChance, \
+		CriticalChance, \
+		CriticalDamage, \
+		CriticalHitResistance, \
+		HealthRegen, \
+		ManaRegen, \
 		MaxHealth, \
-		Mana, \
 		MaxMana, \
 		NETFIELD_REP_END=MaxMana	}; \
 	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override; \
