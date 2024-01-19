@@ -75,7 +75,6 @@ void EmptyLinkFunctionForGeneratedCodeMMC_HealthRegen() {}
 	{
 		return UMMC_HealthRegen::StaticClass();
 	}
-	UMMC_HealthRegen::UMMC_HealthRegen(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UMMC_HealthRegen);
 	UMMC_HealthRegen::~UMMC_HealthRegen() {}
 	struct Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_AbilitySystem_ModMagCalc_MMC_HealthRegen_h_Statics

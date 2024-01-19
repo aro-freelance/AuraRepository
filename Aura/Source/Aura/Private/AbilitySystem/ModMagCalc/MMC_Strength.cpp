@@ -3,3 +3,5 @@
 
 #include "AbilitySystem/ModMagCalc/MMC_Strength.h"
 
+
+//TODO safely remove this

@@ -39,10 +39,13 @@ void EmptyLinkFunctionForGeneratedCodeMMC_Strength() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UMMC_Strength_Statics::Class_MetaDataParams[] = {
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "/**\n * \n */" },
+		{ "Comment", "//TODO safely remove this\n" },
 #endif
 		{ "IncludePath", "AbilitySystem/ModMagCalc/MMC_Strength.h" },
 		{ "ModuleRelativePath", "Public/AbilitySystem/ModMagCalc/MMC_Strength.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "TODO safely remove this" },
+#endif
 	};
 #endif
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UMMC_Strength_Statics::StaticCppClassTypeInfo = {
@@ -83,9 +86,9 @@ void EmptyLinkFunctionForGeneratedCodeMMC_Strength() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_AbilitySystem_ModMagCalc_MMC_Strength_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UMMC_Strength, UMMC_Strength::StaticClass, TEXT("UMMC_Strength"), &Z_Registration_Info_UClass_UMMC_Strength, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMMC_Strength), 3351149914U) },
+		{ Z_Construct_UClass_UMMC_Strength, UMMC_Strength::StaticClass, TEXT("UMMC_Strength"), &Z_Registration_Info_UClass_UMMC_Strength, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMMC_Strength), 117766435U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_AbilitySystem_ModMagCalc_MMC_Strength_h_494540382(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_AbilitySystem_ModMagCalc_MMC_Strength_h_3802165857(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_AbilitySystem_ModMagCalc_MMC_Strength_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_AbilitySystem_ModMagCalc_MMC_Strength_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

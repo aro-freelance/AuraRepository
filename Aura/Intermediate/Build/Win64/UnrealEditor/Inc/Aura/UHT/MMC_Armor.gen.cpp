@@ -75,7 +75,6 @@ void EmptyLinkFunctionForGeneratedCodeMMC_Armor() {}
 	{
 		return UMMC_Armor::StaticClass();
 	}
-	UMMC_Armor::UMMC_Armor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UMMC_Armor);
 	UMMC_Armor::~UMMC_Armor() {}
 	struct Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_AbilitySystem_ModMagCalc_MMC_Armor_h_Statics

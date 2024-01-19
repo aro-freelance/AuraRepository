@@ -29,8 +29,6 @@ public: \
 
 
 #define FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_AbilitySystem_ModMagCalc_MMC_ManaRegen_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API UMMC_ManaRegen(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API UMMC_ManaRegen(UMMC_ManaRegen&&); \
@@ -38,7 +36,7 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UMMC_ManaRegen); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UMMC_ManaRegen); \
-	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UMMC_ManaRegen) \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UMMC_ManaRegen) \
 	NO_API virtual ~UMMC_ManaRegen();
 
 

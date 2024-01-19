@@ -75,7 +75,6 @@ void EmptyLinkFunctionForGeneratedCodeMMC_CritHitResistance() {}
 	{
 		return UMMC_CritHitResistance::StaticClass();
 	}
-	UMMC_CritHitResistance::UMMC_CritHitResistance(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UMMC_CritHitResistance);
 	UMMC_CritHitResistance::~UMMC_CritHitResistance() {}
 	struct Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_AbilitySystem_ModMagCalc_MMC_CritHitResistance_h_Statics

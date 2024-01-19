@@ -13,5 +13,16 @@ UCLASS()
 class AURA_API UMMC_CritChance : public UGameplayModMagnitudeCalculation
 {
 	GENERATED_BODY()
+
+public:
+	
+	UMMC_CritChance();
+
+	virtual float CalculateBaseMagnitude_Implementation(const FGameplayEffectSpec& Spec) const override;
+
+private:
+
+	FGameplayEffectAttributeCaptureDefinition DexterityDefinition;
+	
 	
 };

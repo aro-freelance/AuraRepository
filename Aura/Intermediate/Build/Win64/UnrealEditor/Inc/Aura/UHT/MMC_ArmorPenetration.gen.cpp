@@ -75,7 +75,6 @@ void EmptyLinkFunctionForGeneratedCodeMMC_ArmorPenetration() {}
 	{
 		return UMMC_ArmorPenetration::StaticClass();
 	}
-	UMMC_ArmorPenetration::UMMC_ArmorPenetration(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UMMC_ArmorPenetration);
 	UMMC_ArmorPenetration::~UMMC_ArmorPenetration() {}
 	struct Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_AbilitySystem_ModMagCalc_MMC_ArmorPenetration_h_Statics
