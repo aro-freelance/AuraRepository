@@ -47,17 +47,17 @@ private:
 	UPROPERTY(VisibleAnywhere, ReplicatedUsing=OnRep_MageLevel)
 	int32 MageLevel = 1;
 	UPROPERTY(VisibleAnywhere, ReplicatedUsing=OnRep_WarriorLevel)
-	int32 WarriorLevel = 1;
+	int32 WarriorLevel = 0;
 	UPROPERTY(VisibleAnywhere, ReplicatedUsing=OnRep_ScoutLevel)
-	int32 ScoutLevel = 1;
+	int32 ScoutLevel = 0;
 	
 
 	UPROPERTY(VisibleAnywhere, ReplicatedUsing=OnRep_FireLevel)
-	int32 FireLevel = 1;
+	int32 FireLevel = 2;
 	UPROPERTY(VisibleAnywhere, ReplicatedUsing=OnRep_IceLevel)
 	int32 IceLevel = 1;
 	UPROPERTY(VisibleAnywhere, ReplicatedUsing=OnRep_LightningLevel)
-	int32 LightningLevel = 1;
+	int32 LightningLevel = 3;
 
 	UFUNCTION()
 	void OnRep_PlayerLevel(int32 OldPlayerLevel);
