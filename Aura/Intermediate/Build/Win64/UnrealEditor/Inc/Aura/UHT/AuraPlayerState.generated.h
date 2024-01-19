@@ -17,7 +17,17 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_Player_AuraPlayerState_h_17_SPARSE_DATA
 #define FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_Player_AuraPlayerState_h_17_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_Player_AuraPlayerState_h_17_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
-#define FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_Player_AuraPlayerState_h_17_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_Player_AuraPlayerState_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOnRep_LightningLevel); \
+	DECLARE_FUNCTION(execOnRep_IceLevel); \
+	DECLARE_FUNCTION(execOnRep_FireLevel); \
+	DECLARE_FUNCTION(execOnRep_ScoutLevel); \
+	DECLARE_FUNCTION(execOnRep_WarriorLevel); \
+	DECLARE_FUNCTION(execOnRep_MageLevel); \
+	DECLARE_FUNCTION(execOnRep_PlayerLevel);
+
+
 #define FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_Player_AuraPlayerState_h_17_ACCESSORS
 #define FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_Player_AuraPlayerState_h_17_INCLASS_NO_PURE_DECLS \
 private: \
@@ -26,7 +36,19 @@ private: \
 public: \
 	DECLARE_CLASS(AAuraPlayerState, APlayerState, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/Aura"), NO_API) \
 	DECLARE_SERIALIZER(AAuraPlayerState) \
-	virtual UObject* _getUObject() const override { return const_cast<AAuraPlayerState*>(this); }
+	virtual UObject* _getUObject() const override { return const_cast<AAuraPlayerState*>(this); } \
+	enum class ENetFields_Private : uint16 \
+	{ \
+		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
+		PlayerLevel=NETFIELD_REP_START, \
+		MageLevel, \
+		WarriorLevel, \
+		ScoutLevel, \
+		FireLevel, \
+		IceLevel, \
+		LightningLevel, \
+		NETFIELD_REP_END=LightningLevel	}; \
+	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override;
 
 
 #define FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_Player_AuraPlayerState_h_17_ENHANCED_CONSTRUCTORS \
