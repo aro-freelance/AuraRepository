@@ -32,13 +32,7 @@ UAuraAttributeSet::UAuraAttributeSet()
 	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_ManaRegen, GetManaRegenAttribute);
 	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_MaxHealth, GetMaxHealthAttribute);
 	TagsToAttributes.Add(GameplayTags.Attributes_Secondary_MaxMana, GetMaxManaAttribute);
-
 	
-	/*
-	FAttributeSignature StrengthDelegate;
-	StrengthDelegate.BindStatic(GetStrengthAttribute);
-	TagsToAttributes.Add(GameplayTags.Attributes_Primary_Strength, StrengthDelegate);
-	*/
 }
 
 void UAuraAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
