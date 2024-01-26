@@ -82,6 +82,60 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 		UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Attributes.Secondary.MaxMana"),
 		FString("Total Mana."));
 
+
+
+	
+	/** Input */
+
+	GameplayTags.Input_LMB =
+		UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Input.LMB"),
+		FString("Input Tag for Left Mouse Button."));
+
+	GameplayTags.Input_RMB =
+		UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Input.RMB"),
+		FString("Input Tag for Right Mouse Button."));
+	
+	GameplayTags.Input_01 =
+		UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Input.01"),
+		FString("Input Tag 01."));
+	
+	GameplayTags.Input_02 =
+		UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Input.02"),
+		FString("Input Tag 02."));
+	
+	GameplayTags.Input_03 =
+		UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Input.03"),
+		FString("Input Tag 03."));
+	
+	GameplayTags.Input_04 =
+		UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Input.04"),
+		FString("Input Tag 04."));
+	
+	GameplayTags.Input_05 =
+		UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Input.05"),
+		FString("Input Tag 05."));
+	
+	GameplayTags.Input_06 =
+		UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Input.06"),
+		FString("Input Tag 06."));
+	
+	GameplayTags.Input_07 =
+		UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Input.07"),
+		FString("Input Tag 07."));
+	
+	GameplayTags.Input_08 =
+		UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Input.08"),
+		FString("Input Tag 08."));
+	
+	GameplayTags.Input_09 =
+		UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Input.09"),
+		FString("Input Tag 09."));
+	
+	GameplayTags.Input_10 =
+		UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Input.10"),
+		FString("Input Tag 10."));
+
+
 	
 }
 
