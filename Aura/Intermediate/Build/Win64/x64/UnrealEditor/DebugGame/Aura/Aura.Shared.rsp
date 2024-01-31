@@ -261,11 +261,11 @@
 /I "..\Plugins\Runtime\GameplayAbilities\Source\GameplayAbilities\Public"
 /I "..\Plugins\Runtime\DataRegistry\Intermediate\Build\Win64\UnrealEditor\Inc\DataRegistry\UHT"
 /I "..\Plugins\Runtime\DataRegistry\Source\DataRegistry\Public"
+/I "..\Plugins\EnhancedInput\Intermediate\Build\Win64\UnrealEditor\Inc\EnhancedInput\UHT"
+/I "..\Plugins\EnhancedInput\Source\EnhancedInput\Public"
 /I "C:\Users\yelsa\OneDrive\Documents\Unreal Projects\AuraRepository\Aura\Intermediate\Build\Win64\UnrealEditor\Inc\Aura\UHT"
 /I "C:\Users\yelsa\OneDrive\Documents\Unreal Projects\AuraRepository\Aura\Source"
 /I "C:\Users\yelsa\OneDrive\Documents\Unreal Projects\AuraRepository\Aura\Source\Aura\Public"
-/I "..\Plugins\EnhancedInput\Intermediate\Build\Win64\UnrealEditor\Inc\EnhancedInput\UHT"
-/I "..\Plugins\EnhancedInput\Source\EnhancedInput\Public"
 /external:W0
 /external:I "ThirdParty\mimalloc\include"
 /external:I "ThirdParty\LibTiff\Source\Win64"
