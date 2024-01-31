@@ -4,14 +4,21 @@
 #include "Player/AuraPlayerController.h"
 
 #include "AbilitySystemBlueprintLibrary.h"
+#include "AuraGameplayTags.h"
 #include "EnhancedInputSubsystems.h"
+#include "NavigationPath.h"
+#include "NavigationSystem.h"
 #include "AbilitySystem/AuraAbilitySystemComponent.h"
+#include "Components/SplineComponent.h"
 #include "Input/AuraInputComponent.h"
 #include "Interaction/EnemyInterface.h"
 
 AAuraPlayerController::AAuraPlayerController()
 {
 	bReplicates = true;
+
+	Spline = CreateDefaultSubobject<USplineComponent>("Spline");
+	
 }
 
 void AAuraPlayerController::PlayerTick(float DeltaTime)
@@ -76,21 +83,135 @@ void AAuraPlayerController::CursorTrace()
 
 void AAuraPlayerController::AbilityInputTagPressed(FGameplayTag InputTag)
 {
-	//GEngine->AddOnScreenDebugMessage(1, 3.f, FColor::Red, *InputTag.ToString());
+	if (InputTag.MatchesTagExact(FAuraGameplayTags::Get().Input_LMB))
+	{
+		//if ThisActor is not null then we have a target.
+		bTargeting = ThisActor ? true : false;
+
+		//stop movement (to be started again possibly based on new click)
+		bAutoRunning = false;
+	}
+
+	
 }
 
 void AAuraPlayerController::AbilityInputTagReleased(FGameplayTag InputTag)
 {
-	if(GetASC() == nullptr) return;
-	GEngine->AddOnScreenDebugMessage(1, 3.f, FColor::Red, *InputTag.ToString());
-	GetASC()->AbilityInputTagReleased(InputTag);
+	//if pushing anything other than the left mouse, do the ability
+	if (!InputTag.MatchesTagExact(FAuraGameplayTags::Get().Input_LMB))
+	{
+		if (GetASC())
+		{
+			GetASC()->AbilityInputTagReleased(InputTag);
+		}
+		return;
+	}
+
+	//Targeting and pushing left mouse
+	if(bTargeting)
+	{
+		//TODO:
+		//Get the type of target
+
+		//TODO:
+		//if the target is an enemy, do the ability
+		if (GetASC())
+		{
+			GetASC()->AbilityInputTagReleased(InputTag);
+		}
+
+		//TODO:
+		//if the target is an item, interact with it
+
+		//TODO:
+		//if the target is self, do something else... (menu, self buff?)
+		
+	}
+	//Not targeting and pushing left mouse
+	else
+	{
+		//(auto run) move towards the target location
+
+		APawn* ControlledPawn = GetPawn();
+		if(FollowTime <= PressThreshold && ControlledPawn)
+		{
+			if (UNavigationPath* NavPath = UNavigationSystemV1::FindPathToLocationSynchronously(this,
+				ControlledPawn->GetActorLocation(),CachedDestination))
+			{
+				//clear the spline (curved path between points)
+				Spline->ClearSplinePoints();
+
+				//loop through the path between the two locations and add points to the spline
+				for (const FVector& PointLoc : NavPath->PathPoints)
+				{
+					Spline->AddSplinePoint(PointLoc, ESplineCoordinateSpace::World);
+
+					//Test this by drawing debug spheres
+					DrawDebugSphere(GetWorld(), PointLoc, 8.f, 8, FColor::Green, false, 5.f);
+				}
+				bAutoRunning = true;
+			}
+		}
+	}
+
+	FollowTime = 0.f;
+	bTargeting = false;
+	
 }
 
 void AAuraPlayerController::AbilityInputTagHeld(FGameplayTag InputTag)
 {
-	if(GetASC() == nullptr) return;
-	GEngine->AddOnScreenDebugMessage(2, 3.f, FColor::Blue, *InputTag.ToString());
-	GetASC()->AbilityInputTagHeld(InputTag);
+	
+	//if pushing anything other than the left mouse, do the ability
+	if (!InputTag.MatchesTagExact(FAuraGameplayTags::Get().Input_LMB))
+	{
+		if (GetASC())
+		{
+			GetASC()->AbilityInputTagHeld(InputTag);
+		}
+		return;
+	}
+
+	//Targeting and pushing left mouse
+	if(bTargeting)
+	{
+		//TODO:
+		//Get the type of target
+
+		//TODO:
+		//if the target is an enemy, do the ability
+		if (GetASC())
+		{
+			GetASC()->AbilityInputTagHeld(InputTag);
+		}
+
+		//TODO:
+		//if the target is an item, interact with it
+
+		//TODO:
+		//if the target is self, do something else... (menu, self buff?)
+		
+		
+	}
+	//Not targeting and pushing left mouse
+	else
+	{
+		//move towards the mouse location
+		FollowTime += GetWorld()->GetDeltaSeconds();
+
+		FHitResult Hit;
+		if(GetHitResultUnderCursor(ECC_Visibility, false, Hit))
+		{
+			CachedDestination = Hit.ImpactPoint;
+		}
+
+		if(APawn* ControlledPawn = GetPawn())
+		{
+			const FVector WorldDirection = (CachedDestination - ControlledPawn->GetActorLocation());
+			ControlledPawn->AddMovementInput(WorldDirection);
+		}
+	}
+	
 }
 
 UAuraAbilitySystemComponent* AAuraPlayerController::GetASC()

@@ -15,13 +15,19 @@ void UAuraAbilitySystemComponent::AbilityActorInfoSet()
 
 void UAuraAbilitySystemComponent::AddCharacterAbilities(const TArray<TSubclassOf<UGameplayAbility>>& StartupAbilities)
 {
+	UE_LOG(LogTemp, Warning, TEXT("AddCharacterAbilities. A"))
 	for (const TSubclassOf<UGameplayAbility> AbilityClass : StartupAbilities)
 	{
+		UE_LOG(LogTemp, Warning, TEXT("AddCharacterAbilities. B"))
 		FGameplayAbilitySpec AbilitySpec = FGameplayAbilitySpec(AbilityClass,  1);
 		if (const UAuraGameplayAbility* AuraAbility = Cast<UAuraGameplayAbility>(AbilitySpec.Ability))
 		{
+			UE_LOG(LogTemp, Warning, TEXT("AddCharacterAbilities. C. %s"), *AuraAbility->StartupInputTag.ToString())
 			AbilitySpec.DynamicAbilityTags.AddTag(AuraAbility->StartupInputTag);
-			GiveAbility(AbilityClass);
+
+			GiveAbility(AbilitySpec);
+			
+			
 		}
 		
 	}
@@ -30,35 +36,15 @@ void UAuraAbilitySystemComponent::AddCharacterAbilities(const TArray<TSubclassOf
 void UAuraAbilitySystemComponent::AbilityInputTagHeld(const FGameplayTag& InputTag)
 {
 	if (!InputTag.IsValid()) return;
-
-	//this is showing
-	GEngine->AddOnScreenDebugMessage(12, 3.f, FColor::Green, *InputTag.ToString());
 	
 	for (FGameplayAbilitySpec& AbilitySpec : GetActivatableAbilities())
 	{
-		//GEngine->AddOnScreenDebugMessage(3, 3.f, FColor::Purple, *AbilitySpec.GetDebugString());
-		UE_LOG(LogTemp, Warning, TEXT("AbilityInputTagHeld: %s"), *AbilitySpec.GetDebugString());
-
-		if(AbilitySpec.IsActive())
-		{
-			GEngine->AddOnScreenDebugMessage(3, 3.f, FColor::Purple, *InputTag.ToString());
-		}
-		else { UE_LOG(LogTemp, Warning, TEXT("AbilityInputTagHeld: not active"))};
-		if(!AbilitySpec.DynamicAbilityTags.IsEmpty())
-		{
-			GEngine->AddOnScreenDebugMessage(6, 3.f, FColor::Orange, *InputTag.ToString());
-		}
-		else { UE_LOG(LogTemp, Warning, TEXT("AbilityInputTagHeld: no tags"))};
-		
-		//nothing in here is showing
 		if (AbilitySpec.DynamicAbilityTags.HasTagExact(InputTag))
 		{
-			//GEngine->AddOnScreenDebugMessage(4, 3.f, FColor::Green, *InputTag.ToString());
 			AbilitySpecInputPressed(AbilitySpec);
 			
 			if (!AbilitySpec.IsActive())
 			{
-				//GEngine->AddOnScreenDebugMessage(5, 3.f, FColor::Orange, *InputTag.ToString());
 				TryActivateAbility(AbilitySpec.Handle);
 			}
 		}

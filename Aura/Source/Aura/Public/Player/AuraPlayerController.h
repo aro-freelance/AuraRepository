@@ -13,6 +13,7 @@ struct FInputActionValue;
 class IEnemyInterface;
 class UAuraInputConfig;
 class UAuraAbilitySystemComponent;
+class USplineComponent;
 
 UCLASS()
 class AURA_API AAuraPlayerController : public APlayerController
@@ -56,4 +57,30 @@ private:
 	TObjectPtr<UAuraAbilitySystemComponent> AuraAbilitySystemComponent;
 
 	UAuraAbilitySystemComponent* GetASC();
+
+
+	/*** Movement */
+	
+	FVector CachedDestination = FVector::ZeroVector;
+	float FollowTime = 0.f;
+
+	//the min time required for a press to be considered long, less than this is short
+	//short press = path to location, long press(hold) = path to mouse position
+	float PressThreshold = 0.5f;
+
+	//when this is on the character is moving to the target location
+	bool bAutoRunning = false;
+
+	//when this is true the mouse is hovering over something targetable
+	bool bTargeting = false;
+
+	//the margin for error from character location to target location
+	UPROPERTY(EditDefaultsOnly)
+	float AutoRunAcceptanceRadius = 3.f;
+
+	UPROPERTY(VisibleAnywhere)
+	TObjectPtr<USplineComponent> Spline;
+
+	/* Movement ***/
+	
 };
