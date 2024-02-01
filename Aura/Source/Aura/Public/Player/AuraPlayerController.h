@@ -11,6 +11,8 @@ class UInputMappingContext;
 class UInputAction;
 struct FInputActionValue;
 class IEnemyInterface;
+class IPlayerInterface;
+class IObjectInterface;
 class UAuraInputConfig;
 class UAuraAbilitySystemComponent;
 class USplineComponent;
@@ -42,8 +44,20 @@ private:
 
 	void CursorTrace();
 
-	IEnemyInterface* LastActor;
-	IEnemyInterface* ThisActor;
+	/*** Enemy Interface */
+	IEnemyInterface* LastActor_Enemy;
+	IEnemyInterface* ThisActor_Enemy;
+	/* Enemy Interface ***/
+
+	/*** Player Interface */
+	IPlayerInterface* LastActor_Player;
+	IPlayerInterface* ThisActor_Player;
+	/* Player Interface ***/
+
+	/*** Object Interface */
+	IObjectInterface* LastActor_Object;
+	IObjectInterface* ThisActor_Object;
+	/* Object Interface ***/
 
 	void AbilityInputTagPressed(FGameplayTag InputTag);
 	void AbilityInputTagReleased(FGameplayTag InputTag);
@@ -73,6 +87,9 @@ private:
 
 	//when this is true the mouse is hovering over something targetable
 	bool bTargeting = false;
+	bool bTargeting_Enemy = false;
+	bool bTargeting_Player = false;
+	bool bTargeting_Object = false;
 
 	//the margin for error from character location to target location
 	UPROPERTY(EditDefaultsOnly)

@@ -12,6 +12,8 @@
 #include "Components/SplineComponent.h"
 #include "Input/AuraInputComponent.h"
 #include "Interaction/EnemyInterface.h"
+#include "Interaction/PlayerInterface.h"
+#include "Interaction/ObjectInterface.h"
 
 AAuraPlayerController::AAuraPlayerController()
 {
@@ -35,9 +37,22 @@ void AAuraPlayerController::CursorTrace()
 	GetHitResultUnderCursor(ECC_Visibility, false, CursorHit);
 	if(!CursorHit.bBlockingHit) return;
 
-	LastActor = ThisActor;
-	ThisActor = Cast<IEnemyInterface>(CursorHit.GetActor());
 
+	//TODO: assess whether it would be better to use a single highlight interface and use tags to tell the difference between types.
+	
+	//Enemy
+	LastActor_Enemy = ThisActor_Enemy;
+	ThisActor_Enemy = Cast<IEnemyInterface>(CursorHit.GetActor());
+
+	//Player
+	LastActor_Player = ThisActor_Player;
+	ThisActor_Player = Cast<IPlayerInterface>(CursorHit.GetActor());
+
+	//Object
+	LastActor_Object = ThisActor_Object;
+	ThisActor_Object = Cast<IObjectInterface>(CursorHit.GetActor());
+	//TODO: create an object class and add this interface to it. Implement the hover feature to show a tooltip and a different color highlight
+	
 	/**
 	 * Line trace from cursor Logic
 	 *
@@ -52,32 +67,94 @@ void AAuraPlayerController::CursorTrace()
 	 * E. Both actors are valid and are the same actor
 	 *    -Do nothing
 	 **/
-	
-	if(LastActor == nullptr)
+
+	//Enemy
+	if(LastActor_Enemy == nullptr)
 	{
-		if(ThisActor != nullptr)
+		if(ThisActor_Enemy != nullptr)
 		{
 			//B.
-			ThisActor->HighlightActor();
+			ThisActor_Enemy->HighlightActor();
 		}
 	}
 	else
 	{
-		if(ThisActor == nullptr)
+		if(ThisActor_Enemy == nullptr)
 		{
 			//C.
-			LastActor->UnHighlightActor();
+			LastActor_Enemy->UnHighlightActor();
 		}
 		else
 		{
-			if(LastActor != ThisActor)
+			if(LastActor_Enemy != ThisActor_Enemy)
 			{
 				//D.
-				LastActor->UnHighlightActor();
-				ThisActor->HighlightActor();
+				LastActor_Enemy->UnHighlightActor();
+				ThisActor_Enemy->HighlightActor();
 			}
 		}
 	}
+
+
+	//Player
+	if(LastActor_Player == nullptr)
+	{
+		if(ThisActor_Player != nullptr)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Player Interface B"));
+			//B.
+			ThisActor_Player->HighlightActor();
+		}
+	}
+	else
+	{
+		if(ThisActor_Player == nullptr)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Player Interface  C"));
+			//C.
+			LastActor_Player->UnHighlightActor();
+		}
+		else
+		{
+			if(LastActor_Player != ThisActor_Player)
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Player Interface  C"));
+				//D.
+				LastActor_Player->UnHighlightActor();
+				ThisActor_Player->HighlightActor();
+			}
+		}
+	}
+
+
+
+	//Object
+	if(LastActor_Object == nullptr)
+	{
+		if(ThisActor_Object != nullptr)
+		{
+			//B.
+			ThisActor_Object->HighlightActor();
+		}
+	}
+	else
+	{
+		if(ThisActor_Object == nullptr)
+		{
+			//C.
+			LastActor_Object->UnHighlightActor();
+		}
+		else
+		{
+			if(LastActor_Object != ThisActor_Object)
+			{
+				//D.
+				LastActor_Object->UnHighlightActor();
+				ThisActor_Object->HighlightActor();
+			}
+		}
+	}
+	
 	
 }
 
@@ -86,7 +163,19 @@ void AAuraPlayerController::AbilityInputTagPressed(FGameplayTag InputTag)
 	if (InputTag.MatchesTagExact(FAuraGameplayTags::Get().Input_LMB))
 	{
 		//if ThisActor is not null then we have a target.
-		bTargeting = ThisActor ? true : false;
+		bTargeting_Enemy = ThisActor_Enemy ? true : false;
+		bTargeting_Player = ThisActor_Player ? true : false;
+		bTargeting_Object = ThisActor_Object ? true : false;
+
+		if(bTargeting_Enemy || bTargeting_Player || bTargeting_Object)
+		{
+			bTargeting = true;
+		}
+		else
+		{
+			bTargeting = false;
+		}
+		
 
 		//stop movement (to be started again possibly based on new click)
 		bAutoRunning = false;
@@ -111,7 +200,7 @@ void AAuraPlayerController::AbilityInputTagReleased(FGameplayTag InputTag)
 	if(bTargeting)
 	{
 		//TODO:
-		//Get the type of target
+		//Get the type of target (enemy, player, object using the other bTargeting bools)
 
 		//TODO:
 		//if the target is an enemy, do the ability
@@ -156,6 +245,9 @@ void AAuraPlayerController::AbilityInputTagReleased(FGameplayTag InputTag)
 
 	FollowTime = 0.f;
 	bTargeting = false;
+	bTargeting_Enemy = false;
+	bTargeting_Player = false;
+	bTargeting_Object = false;
 	
 }
 
@@ -176,7 +268,7 @@ void AAuraPlayerController::AbilityInputTagHeld(FGameplayTag InputTag)
 	if(bTargeting)
 	{
 		//TODO:
-		//Get the type of target
+		//Get the type of target (enemy, player, object using the other bTargeting bools)
 
 		//TODO:
 		//if the target is an enemy, do the ability

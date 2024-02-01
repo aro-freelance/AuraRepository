@@ -5,6 +5,7 @@
 
 #include "AbilitySystemComponent.h"
 #include "AbilitySystem/AuraAbilitySystemComponent.h"
+#include "Aura/Aura.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Player/AuraPlayerController.h"
 #include "Player/AuraPlayerState.h"
@@ -39,6 +40,22 @@ void AAuraCharacter::OnRep_PlayerState()
 	//init ability actor info for the client
 	InitAbilityActorInfo();
 }
+
+void AAuraCharacter::HighlightActor()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Highlighted Character"));
+	GetMesh()->SetRenderCustomDepth(true);
+	//TODO: make a new color for the player highlight (blue or white)
+	GetMesh()->SetCustomDepthStencilValue(CUSTOM_DEPTH_RED);
+}
+
+void AAuraCharacter::UnHighlightActor()
+{
+	UE_LOG(LogTemp, Warning, TEXT("UNHighlighted Character"));
+	GetMesh()->SetRenderCustomDepth(false);
+}
+
+
 
 /*** Combat Interface */
 
