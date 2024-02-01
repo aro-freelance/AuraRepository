@@ -28,7 +28,32 @@ void AAuraPlayerController::PlayerTick(float DeltaTime)
 	Super::PlayerTick(DeltaTime);
 
 	CursorTrace();
+	
+	if(bAutoRunning){ AutoRun(); }
+	
 }
+
+void AAuraPlayerController::AutoRun()
+{
+	if(APawn* ControlledPawn = GetPawn())
+	{
+		const FVector LocationOnSpline = Spline->FindLocationClosestToWorldLocation(
+			ControlledPawn->GetActorLocation(), ESplineCoordinateSpace::World);
+
+		const FVector Direction = Spline->FindDirectionClosestToWorldLocation(LocationOnSpline, ESplineCoordinateSpace::World);
+
+		ControlledPawn->AddMovementInput(Direction);
+
+		const float DistanceToDestination = (LocationOnSpline - CachedDestination).Length();
+
+		if(DistanceToDestination <= AutoRunAcceptanceRadius)
+		{
+			bAutoRunning = false;
+		}
+	}
+	
+}
+
 
 //This is used to highlight enemies with a red outline when the cursor is placed on them
 void AAuraPlayerController::CursorTrace()
@@ -237,8 +262,15 @@ void AAuraPlayerController::AbilityInputTagReleased(FGameplayTag InputTag)
 
 					//Test this by drawing debug spheres
 					DrawDebugSphere(GetWorld(), PointLoc, 8.f, 8, FColor::Green, false, 5.f);
+
+					if (NavPath->PathPoints.Num() > 0)
+					{
+						//Correct the destination to a point that is reachable (the last point in the calculated NavPath)
+						CachedDestination = NavPath->PathPoints[NavPath->PathPoints.Num() - 1];
+						
+						bAutoRunning = true;
+					}
 				}
-				bAutoRunning = true;
 			}
 		}
 	}
@@ -315,6 +347,7 @@ UAuraAbilitySystemComponent* AAuraPlayerController::GetASC()
 	}
 	return AuraAbilitySystemComponent;
 }
+
 
 void AAuraPlayerController::BeginPlay()
 {
