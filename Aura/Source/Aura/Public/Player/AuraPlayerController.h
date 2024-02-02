@@ -43,6 +43,7 @@ private:
 	void Move(const FInputActionValue& InputActionValue);
 
 	void CursorTrace();
+	FHitResult CursorHit;
 
 	/*** Enemy Interface */
 	IEnemyInterface* LastActor_Enemy;

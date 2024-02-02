@@ -58,7 +58,7 @@ void AAuraPlayerController::AutoRun()
 //This is used to highlight enemies with a red outline when the cursor is placed on them
 void AAuraPlayerController::CursorTrace()
 {
-	FHitResult CursorHit;
+	
 	GetHitResultUnderCursor(ECC_Visibility, false, CursorHit);
 	if(!CursorHit.bBlockingHit) return;
 
@@ -77,107 +77,27 @@ void AAuraPlayerController::CursorTrace()
 	LastActor_Object = ThisActor_Object;
 	ThisActor_Object = Cast<IObjectInterface>(CursorHit.GetActor());
 	//TODO: create an object class and add this interface to it. Implement the hover feature to show a tooltip and a different color highlight
-	
-	/**
-	 * Line trace from cursor Logic
-	 *
-	 * A. LastActor and ThisActor both null;
-	 *    -do nothing
-	 * B. LastActor is null but ThisActor is valid
-	 *    - Highlight ThisActor
-	 * C. LastActor is valid but ThisActor is null
-	 *    - UnHighlight LastActor
-	 * D. Both actors are valid but Last Actor != ThisActor
-	 *    -UnHighlight LastActor, Highlight ThisActor
-	 * E. Both actors are valid and are the same actor
-	 *    -Do nothing
-	 **/
+
 
 	//Enemy
-	if(LastActor_Enemy == nullptr)
+	if(LastActor_Enemy != ThisActor_Enemy)
 	{
-		if(ThisActor_Enemy != nullptr)
-		{
-			//B.
-			ThisActor_Enemy->HighlightActor();
-		}
+		if(LastActor_Enemy){ LastActor_Enemy->UnHighlightActor(); }
+		if(ThisActor_Enemy){ ThisActor_Enemy->HighlightActor(); }
 	}
-	else
-	{
-		if(ThisActor_Enemy == nullptr)
-		{
-			//C.
-			LastActor_Enemy->UnHighlightActor();
-		}
-		else
-		{
-			if(LastActor_Enemy != ThisActor_Enemy)
-			{
-				//D.
-				LastActor_Enemy->UnHighlightActor();
-				ThisActor_Enemy->HighlightActor();
-			}
-		}
-	}
-
 
 	//Player
-	if(LastActor_Player == nullptr)
+	if(LastActor_Player != ThisActor_Player)
 	{
-		if(ThisActor_Player != nullptr)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("Player Interface B"));
-			//B.
-			ThisActor_Player->HighlightActor();
-		}
-	}
-	else
-	{
-		if(ThisActor_Player == nullptr)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("Player Interface  C"));
-			//C.
-			LastActor_Player->UnHighlightActor();
-		}
-		else
-		{
-			if(LastActor_Player != ThisActor_Player)
-			{
-				UE_LOG(LogTemp, Warning, TEXT("Player Interface  C"));
-				//D.
-				LastActor_Player->UnHighlightActor();
-				ThisActor_Player->HighlightActor();
-			}
-		}
+		if(LastActor_Player){ LastActor_Player->UnHighlightActor(); }
+		if(ThisActor_Player){ ThisActor_Player->HighlightActor(); }
 	}
 
-
-
-	//Object
-	if(LastActor_Object == nullptr)
+	//Enemy
+	if(LastActor_Object != ThisActor_Object)
 	{
-		if(ThisActor_Object != nullptr)
-		{
-			//B.
-			ThisActor_Object->HighlightActor();
-		}
-	}
-	else
-	{
-		if(ThisActor_Object == nullptr)
-		{
-			//C.
-			LastActor_Object->UnHighlightActor();
-		}
-		else
-		{
-			if(LastActor_Object != ThisActor_Object)
-			{
-				//D.
-				LastActor_Object->UnHighlightActor();
-				ThisActor_Object->HighlightActor();
-			}
-		}
+		if(LastActor_Object){ LastActor_Object->UnHighlightActor(); }
+		if(ThisActor_Object){ ThisActor_Object->HighlightActor(); }
 	}
 	
 	
@@ -246,7 +166,7 @@ void AAuraPlayerController::AbilityInputTagReleased(FGameplayTag InputTag)
 	{
 		//(auto run) move towards the target location
 
-		APawn* ControlledPawn = GetPawn();
+		const APawn* ControlledPawn = GetPawn();
 		if(FollowTime <= PressThreshold && ControlledPawn)
 		{
 			if (UNavigationPath* NavPath = UNavigationSystemV1::FindPathToLocationSynchronously(this,
@@ -259,9 +179,6 @@ void AAuraPlayerController::AbilityInputTagReleased(FGameplayTag InputTag)
 				for (const FVector& PointLoc : NavPath->PathPoints)
 				{
 					Spline->AddSplinePoint(PointLoc, ESplineCoordinateSpace::World);
-
-					//Test this by drawing debug spheres
-					DrawDebugSphere(GetWorld(), PointLoc, 8.f, 8, FColor::Green, false, 5.f);
 
 					if (NavPath->PathPoints.Num() > 0)
 					{
@@ -320,13 +237,13 @@ void AAuraPlayerController::AbilityInputTagHeld(FGameplayTag InputTag)
 	//Not targeting and pushing left mouse
 	else
 	{
+		
 		//move towards the mouse location
 		FollowTime += GetWorld()->GetDeltaSeconds();
-
-		FHitResult Hit;
-		if(GetHitResultUnderCursor(ECC_Visibility, false, Hit))
+	
+		if(CursorHit.bBlockingHit)
 		{
-			CachedDestination = Hit.ImpactPoint;
+			CachedDestination = CursorHit.ImpactPoint;
 		}
 
 		if(APawn* ControlledPawn = GetPawn())
