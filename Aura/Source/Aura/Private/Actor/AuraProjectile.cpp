@@ -7,14 +7,11 @@
 
 AAuraProjectile::AAuraProjectile()
 {
-
+	PrimaryActorTick.bCanEverTick = false;
+	bReplicates = true;
+	
 	OverlapSphere = CreateDefaultSubobject<USphereComponent>("OverlapSphere");
 	SetRootComponent(OverlapSphere);
-}
-
-void AAuraProjectile::BeginPlay()
-{
-	Super::BeginPlay();
 	OverlapSphere->OnComponentBeginOverlap.AddDynamic(this, &AAuraProjectile::OnSphereOverlap);
 	OverlapSphere->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 	OverlapSphere->SetCollisionResponseToAllChannels(ECR_Ignore);
@@ -26,6 +23,12 @@ void AAuraProjectile::BeginPlay()
 	ProjectileMovement->InitialSpeed = 550.f;
 	ProjectileMovement->MaxSpeed = 550.f;
 	ProjectileMovement->ProjectileGravityScale = 0.f;
+}
+
+void AAuraProjectile::BeginPlay()
+{
+	Super::BeginPlay();
+	
 	
 }
 

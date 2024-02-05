@@ -39,3 +39,8 @@ int32 ICombatInterface::GetLightningLevel()
 {
 	return 0;
 }
+
+FVector ICombatInterface::GetCombatSocketLocation()
+{
+	return FVector();
+}

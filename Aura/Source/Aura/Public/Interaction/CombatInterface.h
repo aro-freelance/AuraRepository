@@ -31,5 +31,8 @@ public:
 	virtual int32 GetFireLevel();
 	virtual int32 GetIceLevel();
 	virtual int32 GetLightningLevel();
+
+
+	virtual FVector GetCombatSocketLocation();
 	
 };
