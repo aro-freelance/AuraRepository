@@ -5,7 +5,6 @@
 
 #include "Actor/AuraProjectile.h"
 #include "Interaction/CombatInterface.h"
-#include "Kismet/KismetSystemLibrary.h"
 
 void UAuraProjectileSpell::ActivateAbility(
 	const FGameplayAbilitySpecHandle Handle,
@@ -14,12 +13,19 @@ void UAuraProjectileSpell::ActivateAbility(
 	const FGameplayEventData* TriggerEventData)
 {
 	Super::ActivateAbility(Handle, ActorInfo, ActivationInfo, TriggerEventData);
+	
+}
+
+
+//called in Blueprints based on AnimNotify
+void UAuraProjectileSpell::SpawnProjectile()
+{
 
 	//we're on the server if this is true
-	const bool bIsServer = HasAuthority(&ActivationInfo);
+	const bool bIsServer = GetAvatarActorFromActorInfo()->HasAuthority();
 	if(!bIsServer) return;
 
-
+	
 	if(ICombatInterface* CombatInterface = Cast<ICombatInterface>(GetAvatarActorFromActorInfo()))
 	{
 		FTransform SpawnTransform;
@@ -39,6 +45,4 @@ void UAuraProjectileSpell::ActivateAbility(
 		Projectile->FinishSpawning(SpawnTransform);
 			
 	}
-	
-	
 }

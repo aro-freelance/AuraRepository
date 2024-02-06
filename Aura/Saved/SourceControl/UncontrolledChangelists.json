@@ -5,7 +5,11 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/AbilitySystem/GameplayAbilities/Fire/Firebolt/GA_Firebolt.uasset"
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/AbilitySystem/GameplayAbilities/Fire/Firebolt/GA_Firebolt.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/Character/Aura/ABP_AuraCharacter.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Assets/Characters/Aura/Animations/Abilities/AM_Cast_FireBolt.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Assets/Characters/Aura/SK_Aura.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/AnimNotifies/AN_MontageEvent.uasset"
 			]
 		}
 	]
