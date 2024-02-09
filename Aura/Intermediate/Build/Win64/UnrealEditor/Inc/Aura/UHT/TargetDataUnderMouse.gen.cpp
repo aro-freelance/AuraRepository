@@ -6,27 +6,28 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "Aura/Public/AbilitySystem/AbilityTasks/TargetDataUnderMouse.h"
+#include "Abilities/GameplayAbilityTargetTypes.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeTargetDataUnderMouse() {}
 // Cross Module References
 	AURA_API UClass* Z_Construct_UClass_UTargetDataUnderMouse();
 	AURA_API UClass* Z_Construct_UClass_UTargetDataUnderMouse_NoRegister();
 	AURA_API UFunction* Z_Construct_UDelegateFunction_Aura_MouseTargetDataSignature__DelegateSignature();
-	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	GAMEPLAYABILITIES_API UClass* Z_Construct_UClass_UAbilityTask();
 	GAMEPLAYABILITIES_API UClass* Z_Construct_UClass_UGameplayAbility_NoRegister();
+	GAMEPLAYABILITIES_API UScriptStruct* Z_Construct_UScriptStruct_FGameplayAbilityTargetDataHandle();
 	UPackage* Z_Construct_UPackage__Script_Aura();
 // End Cross Module References
 	struct Z_Construct_UDelegateFunction_Aura_MouseTargetDataSignature__DelegateSignature_Statics
 	{
 		struct _Script_Aura_eventMouseTargetDataSignature_Parms
 		{
-			FVector Data;
+			FGameplayAbilityTargetDataHandle DataHandle;
 		};
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_Data_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_DataHandle_MetaData[];
 #endif
-		static const UECodeGen_Private::FStructPropertyParams NewProp_Data;
+		static const UECodeGen_Private::FStructPropertyParams NewProp_DataHandle;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -34,13 +35,13 @@ void EmptyLinkFunctionForGeneratedCodeTargetDataUnderMouse() {}
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_Aura_MouseTargetDataSignature__DelegateSignature_Statics::NewProp_Data_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_Aura_MouseTargetDataSignature__DelegateSignature_Statics::NewProp_DataHandle_MetaData[] = {
 		{ "NativeConst", "" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UDelegateFunction_Aura_MouseTargetDataSignature__DelegateSignature_Statics::NewProp_Data = { "Data", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_Aura_eventMouseTargetDataSignature_Parms, Data), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Aura_MouseTargetDataSignature__DelegateSignature_Statics::NewProp_Data_MetaData), Z_Construct_UDelegateFunction_Aura_MouseTargetDataSignature__DelegateSignature_Statics::NewProp_Data_MetaData) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UDelegateFunction_Aura_MouseTargetDataSignature__DelegateSignature_Statics::NewProp_DataHandle = { "DataHandle", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_Aura_eventMouseTargetDataSignature_Parms, DataHandle), Z_Construct_UScriptStruct_FGameplayAbilityTargetDataHandle, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_Aura_MouseTargetDataSignature__DelegateSignature_Statics::NewProp_DataHandle_MetaData), Z_Construct_UDelegateFunction_Aura_MouseTargetDataSignature__DelegateSignature_Statics::NewProp_DataHandle_MetaData) }; // 3419327209
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_Aura_MouseTargetDataSignature__DelegateSignature_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_Aura_MouseTargetDataSignature__DelegateSignature_Statics::NewProp_Data,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_Aura_MouseTargetDataSignature__DelegateSignature_Statics::NewProp_DataHandle,
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_Aura_MouseTargetDataSignature__DelegateSignature_Statics::Function_MetaDataParams[] = {
@@ -59,14 +60,14 @@ void EmptyLinkFunctionForGeneratedCodeTargetDataUnderMouse() {}
 		}
 		return ReturnFunction;
 	}
-void FMouseTargetDataSignature_DelegateWrapper(const FMulticastScriptDelegate& MouseTargetDataSignature, FVector const& Data)
+void FMouseTargetDataSignature_DelegateWrapper(const FMulticastScriptDelegate& MouseTargetDataSignature, FGameplayAbilityTargetDataHandle const& DataHandle)
 {
 	struct _Script_Aura_eventMouseTargetDataSignature_Parms
 	{
-		FVector Data;
+		FGameplayAbilityTargetDataHandle DataHandle;
 	};
 	_Script_Aura_eventMouseTargetDataSignature_Parms Parms;
-	Parms.Data=Data;
+	Parms.DataHandle=DataHandle;
 	MouseTargetDataSignature.ProcessMulticastDelegate<UObject>(&Parms);
 }
 	DEFINE_FUNCTION(UTargetDataUnderMouse::execCreateTargetDataUnderMouse)
@@ -168,7 +169,7 @@ void FMouseTargetDataSignature_DelegateWrapper(const FMulticastScriptDelegate& M
 		{ "ModuleRelativePath", "Public/AbilitySystem/AbilityTasks/TargetDataUnderMouse.h" },
 	};
 #endif
-	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UTargetDataUnderMouse_Statics::NewProp_ValidData = { "ValidData", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UTargetDataUnderMouse, ValidData), Z_Construct_UDelegateFunction_Aura_MouseTargetDataSignature__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UTargetDataUnderMouse_Statics::NewProp_ValidData_MetaData), Z_Construct_UClass_UTargetDataUnderMouse_Statics::NewProp_ValidData_MetaData) }; // 4064301017
+	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UTargetDataUnderMouse_Statics::NewProp_ValidData = { "ValidData", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UTargetDataUnderMouse, ValidData), Z_Construct_UDelegateFunction_Aura_MouseTargetDataSignature__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UTargetDataUnderMouse_Statics::NewProp_ValidData_MetaData), Z_Construct_UClass_UTargetDataUnderMouse_Statics::NewProp_ValidData_MetaData) }; // 2051891117
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UTargetDataUnderMouse_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UTargetDataUnderMouse_Statics::NewProp_ValidData,
 	};
@@ -211,9 +212,9 @@ void FMouseTargetDataSignature_DelegateWrapper(const FMulticastScriptDelegate& M
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_AbilitySystem_AbilityTasks_TargetDataUnderMouse_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UTargetDataUnderMouse, UTargetDataUnderMouse::StaticClass, TEXT("UTargetDataUnderMouse"), &Z_Registration_Info_UClass_UTargetDataUnderMouse, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UTargetDataUnderMouse), 3925613041U) },
+		{ Z_Construct_UClass_UTargetDataUnderMouse, UTargetDataUnderMouse::StaticClass, TEXT("UTargetDataUnderMouse"), &Z_Registration_Info_UClass_UTargetDataUnderMouse, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UTargetDataUnderMouse), 4132830678U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_AbilitySystem_AbilityTasks_TargetDataUnderMouse_h_352472041(TEXT("/Script/Aura"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_AbilitySystem_AbilityTasks_TargetDataUnderMouse_h_3844555008(TEXT("/Script/Aura"),
 		Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_AbilitySystem_AbilityTasks_TargetDataUnderMouse_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_AbilitySystem_AbilityTasks_TargetDataUnderMouse_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

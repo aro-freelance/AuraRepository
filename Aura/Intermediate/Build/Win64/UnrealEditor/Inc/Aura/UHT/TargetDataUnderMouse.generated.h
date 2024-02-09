@@ -11,13 +11,14 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class UGameplayAbility;
 class UTargetDataUnderMouse;
+struct FGameplayAbilityTargetDataHandle;
 #ifdef AURA_TargetDataUnderMouse_generated_h
 #error "TargetDataUnderMouse.generated.h already included, missing '#pragma once' in TargetDataUnderMouse.h"
 #endif
 #define AURA_TargetDataUnderMouse_generated_h
 
 #define FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_AbilitySystem_AbilityTasks_TargetDataUnderMouse_h_10_DELEGATE \
-AURA_API void FMouseTargetDataSignature_DelegateWrapper(const FMulticastScriptDelegate& MouseTargetDataSignature, FVector const& Data);
+AURA_API void FMouseTargetDataSignature_DelegateWrapper(const FMulticastScriptDelegate& MouseTargetDataSignature, FGameplayAbilityTargetDataHandle const& DataHandle);
 
 
 #define FID_Users_yelsa_OneDrive_Documents_Unreal_Projects_AuraRepository_Aura_Source_Aura_Public_AbilitySystem_AbilityTasks_TargetDataUnderMouse_h_15_SPARSE_DATA

@@ -134,34 +134,27 @@ void AAuraPlayerController::AbilityInputTagReleased(FGameplayTag InputTag)
 	//if pushing anything other than the left mouse, do the ability
 	if (!InputTag.MatchesTagExact(FAuraGameplayTags::Get().Input_LMB))
 	{
-		if (GetASC())
-		{
-			GetASC()->AbilityInputTagReleased(InputTag);
-		}
+		if (GetASC()){ GetASC()->AbilityInputTagReleased(InputTag); }
 		return;
 	}
-
-	//Targeting and pushing left mouse
-	if(bTargeting)
+	
+	//targeting or pushing shift while LMB clicking
+	if(bTargeting || bShiftKeyDown)
 	{
 		//TODO:
 		//Get the type of target (enemy, player, object using the other bTargeting bools)
 
 		//TODO:
 		//if the target is an enemy, do the ability
-		if (GetASC())
-		{
-			GetASC()->AbilityInputTagReleased(InputTag);
-		}
+		if (GetASC()){ GetASC()->AbilityInputTagReleased(InputTag); }
 
 		//TODO:
 		//if the target is an item, interact with it
 
 		//TODO:
 		//if the target is self, do something else... (menu, self buff?)
-		
 	}
-	//Not targeting and pushing left mouse
+	//not targeting or holding shift, move to location
 	else
 	{
 		//(auto run) move towards the target location
@@ -190,10 +183,12 @@ void AAuraPlayerController::AbilityInputTagReleased(FGameplayTag InputTag)
 				}
 			}
 		}
+		
 	}
 
 	FollowTime = 0.f;
 	bTargeting = false;
+	//bShiftKeyDown = false;
 	bTargeting_Enemy = false;
 	bTargeting_Player = false;
 	bTargeting_Object = false;
@@ -206,15 +201,12 @@ void AAuraPlayerController::AbilityInputTagHeld(FGameplayTag InputTag)
 	//if pushing anything other than the left mouse, do the ability
 	if (!InputTag.MatchesTagExact(FAuraGameplayTags::Get().Input_LMB))
 	{
-		if (GetASC())
-		{
-			GetASC()->AbilityInputTagHeld(InputTag);
-		}
+		if (GetASC()){ GetASC()->AbilityInputTagHeld(InputTag); }
 		return;
 	}
 
-	//Targeting and pushing left mouse
-	if(bTargeting)
+	//(Targeting and pushing left mouse) or (shift key and push left mouse button)
+	if(bTargeting || bShiftKeyDown)
 	{
 		//TODO:
 		//Get the type of target (enemy, player, object using the other bTargeting bools)
@@ -292,7 +284,8 @@ void AAuraPlayerController::SetupInputComponent()
 	
 	UAuraInputComponent* AuraInputComponent = CastChecked<UAuraInputComponent>(InputComponent);
 	AuraInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AAuraPlayerController::Move);
-
+	AuraInputComponent->BindAction(ShiftAction, ETriggerEvent::Started, this, &AAuraPlayerController::ShiftPressed);
+	AuraInputComponent->BindAction(ShiftAction, ETriggerEvent::Completed, this, &AAuraPlayerController::ShiftReleased);
 	AuraInputComponent->BindAbilityActions(InputConfig, this,
 		&ThisClass::AbilityInputTagPressed, &ThisClass::AbilityInputTagReleased, &ThisClass::AbilityInputTagHeld);
 }
