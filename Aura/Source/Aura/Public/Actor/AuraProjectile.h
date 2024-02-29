@@ -9,6 +9,7 @@
 
 class USphereComponent;
 class UProjectileMovementComponent;
+class UNiagaraSystem;
 
 
 UCLASS()
@@ -25,14 +26,27 @@ public:
 protected:
 	
 	virtual void BeginPlay() override;
+	virtual void Destroyed() override;
 
+	void PlayImpactSoundAndEffect();
+	
+	UFUNCTION()
 	void OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent,
 		int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-	
 
 private:
 
+	bool bHit = false;
+
+	bool IsHitSelf = false;
+	
 	UPROPERTY(VisibleAnywhere)
 	TObjectPtr<USphereComponent> OverlapSphere;
+
+	UPROPERTY(EditAnywhere)
+	TObjectPtr<UNiagaraSystem> ImpactEffect;
+
+	UPROPERTY(EditAnywhere)
+	TObjectPtr<USoundBase> ImpactSound;
 
 };
