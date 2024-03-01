@@ -33,6 +33,8 @@ void UAuraProjectileSpell::SpawnProjectile(const FVector& ProjectileTargetLocati
 		FTransform SpawnTransform;
 		SpawnTransform.SetLocation(SocketLocation);
 		SpawnTransform.SetRotation(Rotation.Quaternion());
+
+		//UE_LOG(LogTemp, Warning, TEXT("instigator of spawned projectile %s"), *GetOwningActorFromActorInfo()->GetFName().ToString());
 		
 		AAuraProjectile* Projectile = GetWorld()->SpawnActorDeferred<AAuraProjectile>(
 			ProjectileClass,

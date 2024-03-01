@@ -7,7 +7,9 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "NiagaraFunctionLibrary.h"
+#include "Character/AuraCharacter.h"
 #include "Interaction/CombatInterface.h"
+#include "Player/AuraPlayerState.h"
 
 AAuraProjectile::AAuraProjectile()
 {
@@ -21,6 +23,18 @@ AAuraProjectile::AAuraProjectile()
 	OverlapSphere->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
 	OverlapSphere->SetCollisionResponseToChannel(ECC_WorldStatic, ECR_Overlap);
 	OverlapSphere->SetCollisionResponseToChannel(ECC_WorldDynamic, ECR_Overlap);
+
+	//TODO add class for enemy projectile, with opposite overlaps
+	OverlapSphere->SetCollisionResponseToChannel(ECC_GameTraceChannel3, ECR_Overlap);
+	/*
+	 * DefaultEngine.ini
+	 *
+	 * +DefaultChannelResponses=(Channel=ECC_GameTraceChannel1,DefaultResponse=ECR_Overlap,bTraceType=False,bStaticObject=False,Name="PlayerProjectile")
+	 * +DefaultChannelResponses=(Channel=ECC_GameTraceChannel2,DefaultResponse=ECR_Overlap,bTraceType=False,bStaticObject=False,Name="EnemyProjectile")
+	 * +DefaultChannelResponses=(Channel=ECC_GameTraceChannel3,DefaultResponse=ECR_Overlap,bTraceType=False,bStaticObject=False,Name="Enemy")
+	 * +DefaultChannelResponses=(Channel=ECC_GameTraceChannel4,DefaultResponse=ECR_Overlap,bTraceType=False,bStaticObject=False,Name="Player")
+	 * 
+	 */
 
 	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>("ProjectileMovement");
 	ProjectileMovement->InitialSpeed = 550.f;
@@ -57,29 +71,64 @@ void AAuraProjectile::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, 
 	//@yelsa make the projectile not hit the actor that shoots it.
 	/*
 	 * LogTemp: Warning: owner of projectile BP_AuraPlayerState_C_0
+	 * owner of owner is player controller
 	 * LogTemp: Warning: other actor BP_AuraCharacter_C_0
 	 * 
 	 */
+
 	
-	UE_LOG(LogTemp, Warning, TEXT("owner of projectile %s"), *GetOwner()->GetFName().ToString());
-	UE_LOG(LogTemp, Warning, TEXT("other actor %s"), *OtherActor->GetFName().ToString());
-	if(GetOwner() != OtherActor)
+	
+	//UE_LOG(LogTemp, Warning, TEXT("owner  %s"), *GetOwner()->GetFName().ToString());
+
+	AAuraPlayerState* PlayerState = Cast<AAuraPlayerState>(GetOwner());
+
+	if(PlayerState)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("projectile sphere overlap"));
-		PlayImpactSoundAndEffect();
-		
-		if(HasAuthority())
-		{
-			Destroy();
-		}
-		else
-		{
-			bHit = true;
-		}
+		UE_LOG(LogTemp, Warning, TEXT("overlapped comp owner pawn %s"), *PlayerState->GetPawn()->GetFName().ToString());
+		if(PlayerState->GetPawn() == OtherActor) return;
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("playerstate null"));
+	}
 	
+	
+	/*
+	if(GetInstigator())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("instigator  %s"), *GetInstigator()->GetFName().ToString());
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("instigator null"));
+	}*/
+	
+	/*UE_LOG(LogTemp, Warning, TEXT("other actor %s"), *OtherActor->GetFName().ToString());
+	UE_LOG(LogTemp, Warning, TEXT("owner of other comp %s"), *OtherComponent->GetOwner()->GetFName().ToString());*/
+
+	//if (!IsValidOverlap(OtherActor)) return;
+
+	PlayImpactSoundAndEffect();	
+	if(HasAuthority())
+	{
+		Destroy();
+	}
+	else
+	{
+		bHit = true;
 	}
 	
 	
 }
 
+
+bool AAuraProjectile::IsValidOverlap(AActor* OtherActor)
+{
+	/*if (DamageEffectParams.SourceAbilitySystemComponent == nullptr) return false;
+	AActor* SourceAvatarActor = DamageEffectParams.SourceAbilitySystemComponent->GetAvatarActor();
+	if (SourceAvatarActor == OtherActor) return false;
+	if (!UAuraAbilitySystemLibrary::IsNotFriend(SourceAvatarActor, OtherActor)) return false;
+*/
+	return true;
+}
 

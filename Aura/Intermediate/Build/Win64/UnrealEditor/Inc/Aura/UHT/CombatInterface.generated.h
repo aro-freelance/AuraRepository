@@ -57,7 +57,6 @@ protected: \
 public: \
 	typedef UCombatInterface UClassType; \
 	typedef ICombatInterface ThisClass; \
-	static bool Execute_IsHitSelf(UObject* O); \
 	static void Execute_UpdateFacingTarget(UObject* O, FVector const& Target); \
 	virtual UObject* _getUObject() const { return nullptr; }
 

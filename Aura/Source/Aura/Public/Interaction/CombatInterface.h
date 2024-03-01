@@ -32,7 +32,5 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 	void UpdateFacingTarget(const FVector& Target);
 
-	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
-	bool IsHitSelf();
 	
 };
