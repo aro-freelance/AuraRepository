@@ -23,7 +23,14 @@
 				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/__ExternalActors__/Maps/MyMap1/A/5A/UVORQ8CF69JPQPVUBVAR2C.uasset",
 				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/__ExternalActors__/Maps/MyMap1/D/8W/5EXEINS16JI5C0DHE6ZZVX.uasset",
 				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/__ExternalActors__/Maps/MyMap1/7/44/79C6VJBSPSZZ9IC2QGFPO9.uasset",
-				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/__ExternalActors__/Maps/MyMap1/D/FL/6OXADELX0GYTBAR6T1SDMU.uasset"
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/__ExternalActors__/Maps/MyMap1/D/FL/6OXADELX0GYTBAR6T1SDMU.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/AbilitySystem/GameplayEffects/GE_Damage.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/Character/BP_EnemyBase.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/UI/ProgressBar/WBP_ProgressBar.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Maps/MyMap1.umap",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/UI/ProgressBar/WBP_EnemyHealthBar.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/UI/ProgressBar/WB_EnemyHealthBar.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/UI/ProgressBar/WBP_EnemyHealthBar.uasset"
 			]
 		}
 	]
