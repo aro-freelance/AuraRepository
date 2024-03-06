@@ -29,8 +29,21 @@
 				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/UI/ProgressBar/WBP_ProgressBar.uasset",
 				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Maps/MyMap1.umap",
 				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/UI/ProgressBar/WBP_EnemyHealthBar.uasset",
-				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/UI/ProgressBar/WB_EnemyHealthBar.uasset",
-				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/UI/ProgressBar/WBP_EnemyHealthBar.uasset"
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/AbilitySystem/Data/DA_CharacterClassInfo.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/AbilitySystem/GameplayEffects/DefaultAttributes/Aura/GE_AuraPrimaryAttributes.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/AbilitySystem/GameplayEffects/DefaultAttributes/Aura/GE_AuraSecondaryAttributes.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/AbilitySystem/GameplayEffects/DefaultAttributes/Aura/GE_AuraVitalAttributes.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/AbilitySystem/GameplayEffects/DefaultAttributes/GE_AuraVitalAttributes.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/AbilitySystem/GameplayEffects/DefaultAttributes/GE_AuraSecondaryAttributes.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/AbilitySystem/GameplayEffects/DefaultAttributes/GE_AuraPrimaryAttributes.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/AbilitySystem/GameplayEffects/DefaultAttributes/Aura/GE_SecondaryAttributes.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/AbilitySystem/GameplayEffects/DefaultAttributes/Aura/GE_VitalAttributes.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/AbilitySystem/GameplayEffects/DefaultAttributes/GE_SecondaryAttributes.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/AbilitySystem/GameplayEffects/DefaultAttributes/GE_VitalAttributes.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/AbilitySystem/GameplayEffects/DefaultAttributes/Enemy/GE_PrimaryAttributes_Mage.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/AbilitySystem/GameplayEffects/DefaultAttributes/Enemy/GE_PrimaryAttributes_Warrior.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/AbilitySystem/GameplayEffects/DefaultAttributes/Enemy/GE_PrimaryAttributes_Rogue.uasset",
+				"C:/Users/yelsa/OneDrive/Documents/Unreal Projects/AuraRepository/Aura/Content/Blueprints/UI/ProgressBar/WB_EnemyHealthBar.uasset"
 			]
 		}
 	]
